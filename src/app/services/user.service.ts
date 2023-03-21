@@ -37,7 +37,7 @@ export class UserService {
     }), retry({count: 2, delay: 500}));;
   }
 
-  delete(id: number): Observable<IUser> {
+  deleteUser(id: number): Observable<IUser> {
     return this.http.delete<IUser>(`${API_PATH}/users/${id}`).pipe(catchError(() => {
       throw new Error("Failed to reach the server!");
     }), retry({count: 2, delay: 500}));;

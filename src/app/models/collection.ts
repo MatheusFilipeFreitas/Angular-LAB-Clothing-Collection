@@ -5,4 +5,5 @@ export interface ICollection {
   season: string;
   brand: string;
   release: Date;
+  active: boolean;
 }

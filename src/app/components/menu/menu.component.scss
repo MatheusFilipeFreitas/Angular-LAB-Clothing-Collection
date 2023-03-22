@@ -1,0 +1,42 @@
+@import '../../app.component';
+
+.container {
+  height: 100%;
+  padding: 51px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+  font-family: 'Inter', sans-serif;
+  border: 1.75px solid $nav-menu-border-color;
+}
+
+.container h4 {
+  width: 100%;
+  margin-top: 100px;
+  text-transform: uppercase;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  color: $sign-in-credentials-color;
+}
+
+.container ul {
+  list-style: none;
+  width: 100%;
+}
+
+.container ul li {
+  padding: 15.5px 20px;
+  margin-bottom: 15px;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  color: $nav-menu-option;
+}
+
+.container ul .active {
+  background-color: $nav-menu-selected;
+  border-radius: 7px;
+  color: white;
+}

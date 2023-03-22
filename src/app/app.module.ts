@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { WrapperComponent } from './layouts/wrapper/wrapper.component';
 import { FullComponent } from './layouts/full/full.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MenuComponent } from './components/menu/menu.component'
+import { MenuComponent } from './components/menu/menu.component';
+import { HeaderComponent } from './components/header/header.component'
 @NgModule({
   declarations: [
     AppComponent,
     WrapperComponent,
     FullComponent,
-    MenuComponent
+    MenuComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

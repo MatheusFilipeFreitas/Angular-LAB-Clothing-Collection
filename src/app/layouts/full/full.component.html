@@ -1,11 +1,14 @@
-<div class="header-wrapper">
-<!-- app header -->
+<div class="container">
+  <div class="menu-wrapper">
+    <app-menu></app-menu>
+  </div>
+  <div class="main-wrapper">
+    <header>
+      <!-- app-header -->
+    </header>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </div>
 </div>
-<div class="main-wrapper">
-  <nav>
-    <!-- app-menu -->
-  </nav>
-  <main>
-    <router-outlet></router-outlet>
-  </main>
-</div>
+

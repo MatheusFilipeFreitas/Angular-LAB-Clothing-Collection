@@ -1,19 +1,24 @@
 @import '../../app.component';
 
-.container {
+.layout-container {
   display: flex;
   flex-direction: row;
 }
 
-.container .menu-wrapper {
+.layout-container .menu-wrapper {
   height: 100vh;
   min-width: 332px;
 }
 
-.container .main-wrapper {
+.layout-container .main-wrapper {
   display: flex;
   flex-direction: column;
   background-color: $layout-full-main-wrapper-background-color;
   height: 100vh;
   width: 100%;
+}
+
+.layout-container header {
+  width: 100%;
+  min-height: 120px;
 }

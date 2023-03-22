@@ -33,10 +33,12 @@
   font-weight: 500;
   font-size: 16px;
   color: $nav-menu-option;
+  cursor: pointer;
 }
 
 .container ul .active {
   background-color: $nav-menu-selected;
   border-radius: 7px;
   color: white;
+  cursor: default;
 }

@@ -1,0 +1,48 @@
+@import '../../app.component';
+
+.header-container {
+  background-color: white;
+  height: 100%;
+  width: 100%;
+  box-shadow: 3px 3px 12px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  padding: 0px 43px;
+  gap: 60px;
+}
+
+.header-container i {
+  font-size: 21px;
+  color: $header-icon-color;
+  cursor: pointer;
+}
+
+.header-container .box {
+  width: 50px;
+  height: 50px;
+  background-color: $header-box-color;
+  border-radius: 6px;
+}
+
+.btn-invisible {
+  background-color: white;
+}
+
+.dropdown-line {
+  display: flex;
+  font-size: 14px;
+  flex-direction: row;
+  gap: 12px;
+  font-weight: 500;
+}
+
+.dropdown-line i {
+  color: $header-dropdown-itens-color;
+}
+
+.dropdown-item:hover {
+  background-color: white;
+  cursor: pointer;
+}

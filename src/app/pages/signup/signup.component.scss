@@ -1,0 +1,89 @@
+@import '../../app.component';
+
+.container {
+  min-width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+}
+
+.container img {
+  height: 35.99px;
+  width: 36px;
+}
+
+.container form {
+  width: 480px;
+  background-color: white;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 64px 26px 64px;
+  gap: 12px;
+}
+
+form h2 {
+  margin-top: 13px;
+  color: #2C2C2C;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+form h4 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 19px;
+  color: $sign-in-credentials-color;
+  margin-bottom: 37px;
+}
+
+.form-floating {
+  margin-bottom: 10px;
+}
+
+
+form .form-floating label {
+  color: $sign-in-credentials-color;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+form button, .form-floating {
+  width: 100%;
+}
+
+form button {
+  height: 50px;
+  margin-top: 25px;
+  background-color: $button-color;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+form button:hover {
+  background-color: $button-hover;
+}
+
+.password-inputs-container {
+  display: flex;
+  gap: 12px;
+}
+
+p {
+  font-weight: 400;
+  color: $link-text-color;
+  font-size: 16px;
+  margin-bottom: 0px;
+}
+
+a {
+  text-decoration: none;
+  color: #277FFE;
+  font-weight: 500;
+}
+

@@ -1,1 +1,36 @@
-<p>signup works!</p>
+<div class="container">
+    <img src="assets/images/logo.png" alt="">
+    <form>
+      <h2>Sign Up</h2>
+      <h4>Insira seus dados para criar uma conta</h4>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingName" placeholder="Nome">
+        <label for="floatingInput">Nome</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingEnterprise" placeholder="Empresa">
+        <label for="floatingInput">Empresa</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="floatingCNPJ" placeholder="CNPJ">
+        <label for="floatingInput">CNPJ</label>
+      </div>
+      <div class="form-floating">
+        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+        <label for="floatingInput">Informe seu email</label>
+      </div>
+      <div class="password-inputs-container">
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <label for="floatingPassword">Senha</label>
+        </div>
+        <div class="form-floating">
+          <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Password">
+          <label for="floatingPassword">Confirmar senha</label>
+        </div>
+      </div>
+      <button class="btn btn-primary">Criar Conta</button>
+    </form>
+    <p>Já possui uma conta? <a [routerLink]="['/login']" >Realizar login</a> </p>
+  </div>
+  

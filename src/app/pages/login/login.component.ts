@@ -46,17 +46,19 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(this.findUserByEmailInList()) {
-      if(this.passwordIsCorrect()){
-        this.invalidLogin = false;
-        console.log('login');
-        this.createLocalStorage(this.user.name);
-        this.router.navigate(['/dashboard']);
+    if(this.loginForm.valid) {
+      if(this.findUserByEmailInList()) {
+        if(this.passwordIsCorrect()){
+          this.invalidLogin = false;
+          console.log('login');
+          this.createLocalStorage(this.user.name);
+          this.router.navigate(['/dashboard']);
+        }else{
+          this.invalidLogin = true;
+        }
       }else{
         this.invalidLogin = true;
       }
-    }else{
-      this.invalidLogin = true;
     }
   }
 

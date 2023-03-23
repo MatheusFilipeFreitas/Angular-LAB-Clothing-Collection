@@ -4,6 +4,7 @@ export interface ICollection {
   accountable: string;
   season: string;
   brand: string;
+  budget: number;
   release: Date;
   active: boolean;
 }

@@ -17,7 +17,7 @@
           <input [class]="password!.errors?.['required'] && password!.touched ? 'is-invalid' : ''" formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Informe sua senha</label>
         </div>
-        <div *ngIf="password!.errors?.['required'] && password!.touched" class="invalid-feedback">
+        <div *ngIf="password!.errors?.['required'] && password!.touched || password!.errors?.['minlength']" class="invalid-feedback">
           Informe uma senha.
         </div>
         <div *ngIf="invalidLogin" class="invalid-feedback">

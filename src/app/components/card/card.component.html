@@ -1,0 +1,13 @@
+<div class="card">
+  <h4>{{ title }}</h4>
+  <div class="card-body">
+    <h3>{{ value }}</h3>
+    <div *ngIf="title.includes('Orçamento')" class="budget-block">
+      <div class="top-budget-info green">
+        <i class='bx bx-up-arrow-alt'></i>
+        <span>25%</span>
+      </div>
+      <p>Comparado com 01/23</p>
+    </div>
+  </div>
+</div>

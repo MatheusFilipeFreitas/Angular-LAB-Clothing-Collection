@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./full.component.scss']
 })
 export class FullComponent {
-
+  //TODO: Create responsive layout
 }

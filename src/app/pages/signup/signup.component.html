@@ -1,31 +1,31 @@
 <div class="container">
     <img src="assets/images/logo.png" alt="">
-    <form>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
       <h2>Sign Up</h2>
       <h4>Insira seus dados para criar uma conta</h4>
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingName" placeholder="Nome">
+        <input formControlName="name" [class]="name!.errors?.['required'] && name!.touched || name!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingName" placeholder="Nome">
         <label for="floatingInput">Nome</label>
       </div>
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingEnterprise" placeholder="Empresa">
+        <input formControlName="enterprise" [class]="enterprise!.errors?.['required'] && enterprise!.touched || enterprise!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingEnterprise" placeholder="Empresa">
         <label for="floatingInput">Empresa</label>
       </div>
       <div class="form-floating">
-        <input type="text" class="form-control" id="floatingCNPJ" placeholder="CNPJ">
+        <input formControlName="cnpj" [class]="cnpj!.errors?.['required'] && cnpj!.touched || cnpj!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingCNPJ" placeholder="CNPJ">
         <label for="floatingInput">CNPJ</label>
       </div>
       <div class="form-floating">
-        <input type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
+        <input formControlName="email" [class]="email!.errors?.['required'] && email!.touched || email!.errors?.['minlength'] ? 'is-invalid' : ''" type="email" class="form-control" id="floatingEmail" placeholder="name@example.com">
         <label for="floatingInput">Informe seu email</label>
       </div>
       <div class="password-inputs-container">
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+          <input formControlName="password" [class]="password!.errors?.['required'] && password!.touched || password!.errors?.['minlength'] ? 'is-invalid' : ''" type="password" class="form-control" id="floatingPassword" placeholder="Password">
           <label for="floatingPassword">Senha</label>
         </div>
         <div class="form-floating">
-          <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Password">
+          <input formControlName="confirmPassword" [class]="confirmPassword!.errors?.['required'] && confirmPassword!.touched || confirmPassword!.errors?.['minlength'] ? 'is-invalid' : ''" type="password" class="form-control" id="floatingConfirmPassword" placeholder="Password">
           <label for="floatingPassword">Confirmar senha</label>
         </div>
       </div>

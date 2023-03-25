@@ -46,14 +46,14 @@ export class ForgotPasswordComponent implements OnInit{
       return user.email == this.email?.value;
     })!;
     if(this.userFound == undefined) {
-      return true;
+      return false;
     }
-    return false;
+    return true;
   }
 
   onSubmit() {
     if(this.findEmailInUserList()) {
-      this.router.navigate(['/email-send']);
+      this.router.navigate([`/email-sent/${this.userFound.id}`]);
     }else{
       //TODO: toast with error
     }

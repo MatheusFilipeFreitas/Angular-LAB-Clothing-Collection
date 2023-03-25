@@ -1,32 +1,15 @@
 <div class="container">
   <div class="title-line">
     <h3 class="title">Coleções</h3>
-    <button class="btn btn-primary">Criar Coleção</button>
-  </div>
+    <div class="btn-container">
+      <button class="btn btn-primary" (click)="redirectToCreateCollection()">Criar Coleção</button>
+    </div>
+</div>
 
 
   <div class="table-container">
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Coleção</th>
-          <th scope="col">Responsável</th>
-          <th scope="col">Estação - Lançamento</th>
-          <th scope="col">Modelos</th>
-          <th scope="col">Orçamento</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let collection of collections">
-          <td>{{ collection.collection }}</td>
-          <td>{{ collection.accountable }}</td>
-          <td>{{ collection.season }}</td>
-          <td>{{ collection.models }}</td>
-          <td>{{ collection.budget | currency: 'BRL' }}</td>
-        </tr>
-      </tbody>
-    </table>
-    <nav aria-label="Page navigation example">
+
+    <!-- <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
         <li class="page-item disabled">
           <a class="page-link" href="#" tabindex="-1">Previous</a>
@@ -38,7 +21,7 @@
           <a class="page-link" href="#">Next</a>
         </li>
       </ul>
-    </nav>
+    </nav> -->
   </div>
 
 </div>

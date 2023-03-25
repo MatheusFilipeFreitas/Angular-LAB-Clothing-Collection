@@ -1,46 +1,34 @@
-import { Component } from '@angular/core';
+import { ICollection } from './../../../models/collection';
+import { CollectionService } from './../../../services/collection.service';
+import { Router } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-list-collection',
   templateUrl: './list-collection.component.html',
   styleUrls: ['./list-collection.component.scss']
 })
-export class ListCollectionComponent {
-  collections: any[] = [
-    {
-      collection: "Adidas",
-      accountable: "Yan Esteves",
-      season: "Inverno 2023",
-      models: 10,
-      budget: 9500
-    },
-    {
-      collection: "Renner",
-      accountable: "Yan Esteves",
-      season: "Inverno 2023",
-      models: 10,
-      budget: 3500
-    },
-    {
-      collection: "PatBO",
-      accountable: "Yan Esteves",
-      season: "Inverno 2023",
-      models: 10,
-      budget: 8700
-    },
-    {
-      collection: "Nike",
-      accountable: "Yan Esteves",
-      season: "Inverno 2023",
-      models: 10,
-      budget: 9100
-    },
-    {
-      collection: "Pollo",
-      accountable: "Yan Esteves",
-      season: "Inverno 2023",
-      models: 10,
-      budget: 10000
-    },
-]
+
+
+export class ListCollectionComponent implements OnInit{
+
+  collections!: ICollection[];
+
+  constructor(private router: Router, private collectionService: CollectionService) {
+
+  }
+
+  ngOnInit(): void {
+    this.getListOfCollections();
+  }
+
+  getListOfCollections() {
+    this.collectionService.getAllCollections().subscribe((collections) => {
+      this.collections = collections;
+    });
+  }
+
+  redirectToCreateCollection() {
+    this.router.navigate(['/collections/create'])
+  }
 }

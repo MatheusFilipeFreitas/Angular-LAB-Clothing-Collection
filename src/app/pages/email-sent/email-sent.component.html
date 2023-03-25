@@ -1,1 +1,14 @@
-<p>email-sent works!</p>
+<div class="container">
+  <img src="assets/images/logo.png" alt="">
+  <div *ngIf="!user; else emailContent">
+    <!-- Loading... -->
+  </div>
+  <ng-template #emailContent class="message-container">
+    <form (ngSubmit)="onSubmit()">
+      <span><i class='bx bx-left-arrow-alt'></i> <h2>Redefinir Senha</h2></span>
+      <h4>Um link para redefinição de senha foi enviado para o e-mail <strong>{{ user.email }}</strong>.</h4>
+      <button type="submit" class="btn btn-primary">Ir para login</button>
+    </form>
+  </ng-template>
+
+</div>

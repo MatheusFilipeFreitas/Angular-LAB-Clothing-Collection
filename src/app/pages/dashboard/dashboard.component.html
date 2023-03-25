@@ -11,4 +11,26 @@
       <app-card [title]="'Orçamento Médio'" [value]="4700"></app-card>
     </div>
   </div>
+  <div class="table-container">
+    <caption>Maiores Orçamentos</caption>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Coleção</th>
+          <th scope="col">Responsável</th>
+          <th scope="col">Modelos</th>
+          <th scope="col">Orçamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let budget of biggerBudgets">
+          <td>{{budget.collection}}</td>
+          <td>{{budget.accountable}}</td>
+          <td>{{budget.model}}</td>
+          <td>{{budget.budget | currency: 'BRL'}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
 </div>

@@ -7,15 +7,16 @@
 }
 
 .layout-container .menu-wrapper {
-  height: 100vh;
+  min-height: 100vh;
   min-width: 332px;
+  border-right: 1.75px solid $nav-menu-border-color;
 }
 
 .layout-container .main-wrapper {
   display: flex;
   flex-direction: column;
   background-color: $layout-full-main-wrapper-background-color;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 

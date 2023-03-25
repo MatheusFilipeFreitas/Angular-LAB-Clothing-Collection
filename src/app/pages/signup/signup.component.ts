@@ -11,6 +11,7 @@ import { Component, OnInit } from '@angular/core';
 
 // TODO: see how to use reactive forms for validation
 // TODO: verify if the user is already registered
+// TODO: implement Sweetalert
 export class SignupComponent implements OnInit {
   registerForm!: FormGroup;
   user!: IUser;

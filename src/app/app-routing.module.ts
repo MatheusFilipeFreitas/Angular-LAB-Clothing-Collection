@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { FullComponent } from './layouts/full/full.component';
 import { WrapperComponent } from './layouts/wrapper/wrapper.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   {
@@ -22,6 +23,10 @@ const routes: Routes = [
       {
         path: 'signup',
         component: SignupComponent
+      },
+      {
+        path: 'password-recovery',
+        component: ForgotPasswordComponent
       }
     ]
   }

@@ -8,7 +8,26 @@
 
 
   <div class="table-container">
-
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Coleção</th>
+          <th scope="col">Responsável</th>
+          <th scope="col">Estação - Lançamento</th>
+          <th scope="col">Modelos</th>
+          <th scope="col">Orçamento</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let collection of collections">
+          <td>{{ collection.name }}</td>
+          <td>{{ collection.accountable }}</td>
+          <td>{{ collection.season }}</td>
+          <td>{{ collection.brand }}</td>
+          <td>{{ collection.budget | currency: 'BRL' }}</td>
+        </tr>
+      </tbody>
+    </table>
     <!-- <nav aria-label="Page navigation example">
       <ul class="pagination justify-content-center">
         <li class="page-item disabled">

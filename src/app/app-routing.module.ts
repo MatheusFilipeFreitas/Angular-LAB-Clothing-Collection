@@ -1,3 +1,4 @@
+import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -43,6 +44,10 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashboardComponent
+      },
+      {
+        path: 'collections',
+        component: ListCollectionComponent
       }
     ]
   }

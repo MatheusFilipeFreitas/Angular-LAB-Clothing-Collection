@@ -17,28 +17,7 @@
       "id": 2
     }
   ],
-  "collections": [
-    {
-      "id": 1,
-      "name": "Collection Test",
-      "accountable": "Test",
-      "season": "Summer",
-      "brand": "Test of North",
-      "budget": 10000,
-      "release": 10000,
-      "models": 150
-    },
-    {
-      "name": "Extreme Sport",
-      "accountable": "Yan Esteves",
-      "season": "Fall",
-      "brand": "Adidas",
-      "budget": "10000",
-      "release": "10000",
-      "models": 0,
-      "id": 2
-    }
-  ],
+  "collections": [],
   "models": [
     {
       "id": 1,

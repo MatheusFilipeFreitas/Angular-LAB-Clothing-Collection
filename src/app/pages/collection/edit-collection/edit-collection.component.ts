@@ -51,7 +51,7 @@ export class EditCollectionComponent implements OnInit {
       })
 
     }catch(error) {
-      // message error
+      this.resultErrorMessageGetCollection();
     }
   }
 
@@ -60,7 +60,6 @@ export class EditCollectionComponent implements OnInit {
     try {
       this.collectionService.updateCollection(this.currentId, collection).subscribe({
         next: (v) => this.resultMessageCollection(v),
-        error: (e) => this.resultErrorMessageCollection(),
       });
     }catch(error) {
       this.resultErrorMessageCollection();
@@ -76,6 +75,17 @@ export class EditCollectionComponent implements OnInit {
       budget: new FormControl(null,[Validators.required, Validators.minLength(3)]),
       release: new FormControl(null,[Validators.required, Validators.minLength(3)]),
     });
+  }
+
+  deleteCollection() {
+    try {
+      this.collectionService.deleteCollection(this.currentId).subscribe({
+        next: () => this.resultMessageDeleteCollection(),
+        complete: () => this.router.navigate(['/collections'])
+      });
+    }catch(error) {
+      this.resultErrorMessageDeleteCollection();
+    }
   }
 
   get name() {
@@ -128,6 +138,10 @@ export class EditCollectionComponent implements OnInit {
     this.router.navigate(['/collections']);
   }
 
+  delete() {
+    this.deleteCollection();
+  }
+
   resultMessageCollection(result: any) {
     if(result.name) {
       this.alertMessage = {
@@ -138,16 +152,43 @@ export class EditCollectionComponent implements OnInit {
       this.alertService.showGenericAlert(this.alertMessage);
     }else {
       this.alertMessage = {
-        title: 'Ocorreu um erro ao cadastrar a Coleção',
+        title: 'Ocorreu um erro ao atualizar a Coleção',
         message: 'Entrar em contato com o administrador do sistema.',
         typeAlert: ERROR,
       }
     }
   }
 
+  resultMessageDeleteCollection() {
+    this.alertMessage = {
+      title: '',
+      message: 'Coleção deletada com sucesso!',
+      typeAlert: SUCCESS,
+    }
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
+
   resultErrorMessageCollection() {
     this.alertMessage = {
-      title: 'Ocorreu um erro ao cadastrar a Coleção',
+      title: 'Ocorreu um erro ao atualizar a Coleção',
+      message: 'Entrar em contato com o administrador do sistema. 222',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
+
+  resultErrorMessageGetCollection() {
+    this.alertMessage = {
+      title: 'Ocorreu um erro ao resgatar a Coleção',
+      message: 'Entrar em contato com o administrador do sistema.',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
+
+  resultErrorMessageDeleteCollection() {
+    this.alertMessage = {
+      title: 'Ocorreu um erro ao deletar a Coleção',
       message: 'Entrar em contato com o administrador do sistema.',
       typeAlert: ERROR,
     };

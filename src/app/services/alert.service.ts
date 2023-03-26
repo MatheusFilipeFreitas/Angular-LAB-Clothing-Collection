@@ -10,31 +10,46 @@ export class AlertService {
 
   constructor() { }
 
-  private display(title: string, message: string, icon: SweetAlertIcon): void {
+  private displayAlert(title: string, message: string, icon: SweetAlertIcon): void {
     Swal.fire(title, message, icon);
   }
 
+  public displayDialog(alert: IAlert) {
+    Swal.fire({
+      title: alert.title,
+      text: alert.message,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#d33',
+      cancelButtonColor: '#3085d6',
+      confirmButtonText: 'Deletar'
+    });
+  }
+
+
   public showGenericAlert(alert: IAlert) {
-    this.display(alert.title!, alert.message, alert.typeAlert!);
+    this.displayAlert(alert.title!, alert.message, alert.typeAlert!);
   }
 
   public displayInfo(alert: IAlert) {
-    this.display(alert.title!, alert.message, INFO);
+    this.displayAlert(alert.title!, alert.message, INFO);
   }
 
   public displaySuccess(alert: IAlert) {
-    this.display(alert.title!, alert.message, SUCCESS);
+    this.displayAlert(alert.title!, alert.message, SUCCESS);
   }
 
   public displayError(alert: IAlert) {
-    this.display(alert.title!, alert.message, ERROR);
+    this.displayAlert(alert.title!, alert.message, ERROR);
   }
 
   public displayWarning(alert: IAlert) {
-    this.display(alert.title!, alert.message, WARNING);
+    this.displayAlert(alert.title!, alert.message, WARNING);
   }
 
   public displayQuestion(alert: IAlert) {
-    this.display(alert.title!, alert.message, QUESTION);
+    this.displayAlert(alert.title!, alert.message, QUESTION);
   }
+
+
 }

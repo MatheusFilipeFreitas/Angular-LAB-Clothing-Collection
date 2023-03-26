@@ -16,6 +16,7 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { EmailSentComponent } from './pages/email-sent/email-sent.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
+import { CreateCollectionComponent } from './pages/collection/create-collection/create-collection.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { ListCollectionComponent } from './pages/collection/list-collection/list
     EmailSentComponent,
     DashboardComponent,
     ListCollectionComponent,
+    CreateCollectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],

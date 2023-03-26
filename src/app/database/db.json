@@ -17,7 +17,8 @@
       "season": "Summer",
       "brand": "Test of North",
       "budget": 10000,
-      "release": "2018-12-10T13:45:00.000Z"
+      "models": 150,
+      "release": "2018"
     }
   ],
   "models": [

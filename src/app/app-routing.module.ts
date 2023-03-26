@@ -1,3 +1,4 @@
+import { CreateCollectionComponent } from './pages/collection/create-collection/create-collection.component';
 import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
 import { LoginComponent } from './pages/login/login.component';
 import { NgModule } from '@angular/core';
@@ -47,8 +48,18 @@ const routes: Routes = [
       },
       {
         path: 'collections',
-        component: ListCollectionComponent
+        children: [
+          {
+            path: '',
+            component: ListCollectionComponent
+          },
+          {
+            path: 'create',
+            component: CreateCollectionComponent
+          }
+        ]
       }
+
     ]
   }
 ];

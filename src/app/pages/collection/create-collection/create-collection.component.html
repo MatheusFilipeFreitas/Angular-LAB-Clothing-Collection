@@ -1,1 +1,54 @@
-<p>create-collection works!</p>
+<div class="container">
+  <h3 class="title">Criar Coleção</h3>
+  <form>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-floating">
+          <input formControlName="name" type="text" class="form-control" id="floatingName" placeholder="Nome">
+          <label for="floatingInput">Nome da Coleção</label>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-floating">
+          <input formControlName="accountable" type="text" class="form-control" id="floatingAccountable" placeholder="Nome">
+          <label for="floatingInput">Responsável pela Coleção</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-floating">
+          <input formControlName="season" type="text" class="form-control" id="floatingSeason" placeholder="Nome">
+          <label for="floatingInput">Para qual estação?</label>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-floating">
+          <input formControlName="brand" type="text" class="form-control" id="floatingBrand" placeholder="Nome">
+          <label for="floatingInput">Para qual marca você está criando?</label>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm">
+        <div class="form-floating">
+          <input formControlName="budget" type="text" class="form-control" id="floatingBudget" placeholder="Nome">
+          <label for="floatingInput">Qual é o orçamento desta Coleção?</label>
+        </div>
+      </div>
+      <div class="col-sm">
+        <div class="form-floating">
+          <input formControlName="release" type="text" class="form-control" id="floatingRelease" placeholder="Nome">
+          <label for="floatingInput">Ano de Lançamento</label>
+        </div>
+      </div>
+    </div>
+    <div class="img-container">
+      <img src="assets/images/image 1.png" alt="">
+    </div>
+    <div class="buttons-area">
+      <button class="btn btn-light">Cancelar</button>
+      <button type="submit" class="btn btn-primary">Salvar</button>
+    </div>
+  </form>
+</div>

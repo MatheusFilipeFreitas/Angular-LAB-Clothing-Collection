@@ -10,12 +10,14 @@
   font-weight: 600;
   font-size: 28px;
   margin-top: 7px;
+
 }
 
 .title-line {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  max-width: 1120px;
 }
 
 .title-line button {

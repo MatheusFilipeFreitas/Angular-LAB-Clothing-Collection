@@ -17,6 +17,7 @@ import { EmailSentComponent } from './pages/email-sent/email-sent.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
 import { CreateCollectionComponent } from './pages/collection/create-collection/create-collection.component';
+import { EditCollectionComponent } from './pages/collection/edit-collection/edit-collection.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { CreateCollectionComponent } from './pages/collection/create-collection/
     DashboardComponent,
     ListCollectionComponent,
     CreateCollectionComponent,
+    EditCollectionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],

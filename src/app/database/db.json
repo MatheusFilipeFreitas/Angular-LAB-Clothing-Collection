@@ -1,12 +1,20 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Test",
-      "enterpriseName": "Enterprise Test",
-      "cnpj": "00000000000",
+      "name": "tester in data",
+      "enterprise": "any",
+      "cnpj": "12345678910111",
       "email": "test@test.com",
-      "password": "test12345"
+      "password": "test12345",
+      "id": 1
+    },
+    {
+      "name": "administrador",
+      "enterprise": "any",
+      "cnpj": "12345678910112",
+      "email": "adm@adm.com",
+      "password": "adm12345",
+      "id": 2
     }
   ],
   "collections": [
@@ -19,6 +27,16 @@
       "budget": 10000,
       "models": 150,
       "release": "2018"
+    },
+    {
+      "name": "Extreme Sport",
+      "accountable": "Yan Esteves",
+      "season": "Fall",
+      "brand": "Adidas",
+      "budget": "10000",
+      "release": "10000",
+      "models": 0,
+      "id": 2
     }
   ],
   "models": [

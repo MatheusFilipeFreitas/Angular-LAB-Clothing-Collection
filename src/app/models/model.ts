@@ -6,5 +6,4 @@ export interface IModel {
   collection: number;
   embroidery: boolean;
   stamped: boolean;
-  active: boolean;
 }

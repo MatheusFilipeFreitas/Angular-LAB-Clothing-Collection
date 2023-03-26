@@ -19,7 +19,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let collection of collections">
+        <tr *ngFor="let collection of collections" (click)="redirectToUpdate(collection.id)">
           <td>{{ collection.name }}</td>
           <td>{{ collection.accountable }}</td>
           <td>{{ collection.season + ' - ' + collection.release }}</td>

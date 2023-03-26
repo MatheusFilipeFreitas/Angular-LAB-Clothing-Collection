@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-collection.component.scss']
 })
 
+// TODO: custom style of table rows when is hover
 
 export class ListCollectionComponent implements OnInit{
 
@@ -25,10 +26,15 @@ export class ListCollectionComponent implements OnInit{
   getListOfCollections() {
     this.collectionService.getAllCollections().subscribe((collections) => {
       this.collections = collections;
+
     });
   }
 
   redirectToCreateCollection() {
     this.router.navigate(['/collections/create'])
+  }
+
+  redirectToUpdate(id?: number) {
+    this.router.navigate(['/collections/update/'+ id]);
   }
 }

@@ -5,5 +5,4 @@ export interface IUser {
   cnpj: string;
   email: string;
   password: string;
-  active: boolean;
 }

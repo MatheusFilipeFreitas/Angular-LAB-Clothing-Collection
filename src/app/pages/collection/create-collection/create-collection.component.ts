@@ -1,8 +1,11 @@
+import { AlertService } from 'src/app/services/alert.service';
+import { IAlert } from './../../../models/alert';
 import { ICollection } from './../../../models/collection';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CollectionService } from './../../../services/collection.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
+import { ERROR, SUCCESS } from 'src/app/common/alert-state';
 
 @Component({
   selector: 'app-create-collection',
@@ -11,9 +14,18 @@ import { Router } from '@angular/router';
 })
 export class CreateCollectionComponent implements OnInit {
   collectionCreateForm!: FormGroup;
-  collection!: ICollection;
+  alertMessage!: IAlert;
+  collection: ICollection = {
+    name: '',
+    accountable: '',
+    season: '',
+    brand: '',
+    budget: 0,
+    release: '',
+    models: 0
+  }
 
-  constructor(private router: Router, private collectionService: CollectionService) {
+  constructor(private activeRoute: ActivatedRoute ,private router: Router, private collectionService: CollectionService, private alertService: AlertService) {
 
   }
 
@@ -23,12 +35,12 @@ export class CreateCollectionComponent implements OnInit {
 
   createForm() {
     this.collectionCreateForm = new FormGroup({
-      name: new FormControl('',[Validators.required, Validators.minLength(3)]),
-      accountable: new FormControl('',[Validators.required, Validators.minLength(3)]),
-      season: new FormControl('',[Validators.required, Validators.minLength(3)]),
-      brand: new FormControl('',[Validators.required, Validators.minLength(3)]),
-      budget: new FormControl('',[Validators.required, Validators.minLength(3)]),
-      release: new FormControl('',[Validators.required, Validators.minLength(3)]),
+      name: new FormControl(null,[Validators.required, Validators.minLength(3)]),
+      accountable: new FormControl(null,[Validators.required, Validators.minLength(3)]),
+      season: new FormControl(null,[Validators.required, Validators.minLength(3)]),
+      brand: new FormControl(null,[Validators.required, Validators.minLength(3)]),
+      budget: new FormControl(null,[Validators.required, Validators.minLength(3)]),
+      release: new FormControl(null,[Validators.required, Validators.minLength(3)]),
     });
   }
 
@@ -56,26 +68,77 @@ export class CreateCollectionComponent implements OnInit {
     return this.collectionCreateForm.get('release');
   }
 
-  onSubmit() {
-    if(this.collectionCreateForm.valid){
-      this.createCollection();
-      this.collectionService.createCollection(this.collection);
-    }
-  }
+  createCollection(): Boolean {
+    const collection = this.createObjectCollection();
 
-  createCollection() {
-    this.collection.name = this.name?.value;
-    this.collection.accountable = this.accountable?.value;
-    this.collection.season = this.season?.value;
-    this.collection.brand = this.brand?.value;
-    this.collection.budget = this.budget?.value;
-    this.collection.release = this.release?.value;
+    try {
+      this.collectionService.createCollection(collection).subscribe({
+        next: (r) => this.resultMessageCollection(r),
+        error: (e) => this.resultErrorMessageCollection(),
+      })
+    }catch(error) {
+      this.resultErrorMessageCollection();
+      return false;
+    }
+    return true;
   }
 
   cancel() {
     this.router.navigate(['/collections']);
   }
 
+  createObjectCollection(): ICollection {
+    return {
+      name: this.name?.value,
+      accountable: this.accountable?.value,
+      season: this.season?.value,
+      brand: this.brand?.value,
+      budget: this.budget?.value,
+      release: this.budget?.value,
+      models: 0,
+    }
+  }
 
+  onSubmit() {
+    if(this.collectionCreateForm.valid) {
+      this.createCollection();
+    }else{
+      this.resultBlankInputsCollection();
+    }
+  }
 
+  resultMessageCollection(result: any) {
+    if(result.name) {
+      this.alertMessage = {
+        title: '',
+        message: 'Coleção cadastrada com sucesso!',
+        typeAlert: SUCCESS,
+      }
+      this.alertService.showGenericAlert(this.alertMessage);
+    }else {
+      this.alertMessage = {
+        title: 'Ocorreu um erro ao cadastrar uma Coleção',
+        message: 'Entrar em contato com o administrador do sistema.',
+        typeAlert: ERROR,
+      }
+    }
+  }
+
+  resultErrorMessageCollection() {
+    this.alertMessage = {
+      title: 'Ocorreu um erro ao cadastrar uma Coleção',
+      message: 'Entrar em contato com o administrador do sistema.',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
+
+  resultBlankInputsCollection() {
+    this.alertMessage = {
+      title: '',
+      message: 'Preencha os campos',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
 }

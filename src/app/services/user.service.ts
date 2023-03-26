@@ -16,30 +16,30 @@ export class UserService {
   getAllUsers(): Observable<IUser[]> {
     return this.http.get<IUser[]>(`${API_PATH}/users`).pipe(catchError(() => {
       throw new Error("Failed to reach the server!");
-    }), retry({count: 2, delay: 500}));;
+    }), retry({count: 2, delay: 500}));
   }
 
   getUser(id: number): Observable<IUser> {
     return this.http.get<IUser>(`${API_PATH}/users/${id}`).pipe(catchError(() => {
       throw new Error("Failed to reach the server!");
-    }), retry({count: 2, delay: 500}));;
+    }), retry({count: 2, delay: 500}));
   }
 
   createUser(user: IUser): Observable<IUser> {
     return this.http.post<IUser>(`${API_PATH}/users`, user).pipe(catchError(() => {
       throw new Error("Failed to reach the server!");
-    }), retry({count: 2, delay: 500}));;
+    }), retry({count: 2, delay: 500}));
   }
 
   updateUser(id: number ,user: IUser): Observable<IUser> {
     return this.http.put<IUser>(`${API_PATH}/users/${id}`, user).pipe(catchError(() => {
       throw new Error("Failed to reach the server!");
-    }), retry({count: 2, delay: 500}));;
+    }), retry({count: 2, delay: 500}));
   }
 
   deleteUser(id: number): Observable<IUser> {
     return this.http.delete<IUser>(`${API_PATH}/users/${id}`).pipe(catchError(() => {
       throw new Error("Failed to reach the server!");
-    }), retry({count: 2, delay: 500}));;
+    }), retry({count: 2, delay: 500}));
   }
 }

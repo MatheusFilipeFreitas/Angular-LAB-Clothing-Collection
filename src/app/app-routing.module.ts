@@ -1,3 +1,4 @@
+import { EditCollectionComponent } from './pages/collection/edit-collection/edit-collection.component';
 import { CreateCollectionComponent } from './pages/collection/create-collection/create-collection.component';
 import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -56,6 +57,10 @@ const routes: Routes = [
           {
             path: 'create',
             component: CreateCollectionComponent
+          },
+          {
+            path: 'update/:id',
+            component: EditCollectionComponent
           }
         ]
       }

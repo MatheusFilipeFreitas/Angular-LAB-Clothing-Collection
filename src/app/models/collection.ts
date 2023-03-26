@@ -1,4 +1,3 @@
-import { IModel } from './model';
 export interface ICollection {
   id?: number;
   name: string;
@@ -8,5 +7,4 @@ export interface ICollection {
   budget: number;
   release: string;
   models: number;
-  active: boolean;
 }

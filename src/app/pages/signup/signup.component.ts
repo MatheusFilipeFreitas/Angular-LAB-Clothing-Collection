@@ -1,7 +1,11 @@
+import { AlertService } from './../../services/alert.service';
+import { IAlert } from './../../models/alert';
 import { UserService } from './../../services/user.service';
 import { IUser } from './../../models/user';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
+import { ERROR, SUCCESS } from 'src/app/common/alert-state';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signup',
@@ -9,29 +13,28 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./signup.component.scss']
 })
 
-// TODO: see how to use reactive forms for validation
-// TODO: verify if the user is already registered
-// TODO: implement Sweetalert
 export class SignupComponent implements OnInit {
   registerForm!: FormGroup;
-  user!: IUser;
+  alertMessage!: IAlert;
+  userList!: IUser[];
 
-  constructor(private userService: UserService) {
+  constructor(private router: Router ,private userService: UserService, private alertService: AlertService) {
 
   }
 
   ngOnInit(): void {
+    this.getUsersList();
     this.createRegisterForm();
   }
 
   createRegisterForm() {
     this.registerForm = new FormGroup({
-      name: new FormControl('',[Validators.required, Validators.minLength(8)]),
-      enterprise: new FormControl('',[Validators.required, Validators.minLength(2)]),
-      cnpj: new FormControl('',[Validators.required, Validators.minLength(14)]),
-      email: new FormControl('',[Validators.required, Validators.minLength(8)]),
-      password: new FormControl('',[Validators.required, Validators.minLength(8)]),
-      confirmPassword: new FormControl('', [Validators.required, Validators.minLength(8)])
+      name: new FormControl(null,[Validators.required, Validators.minLength(8)]),
+      enterprise: new FormControl(null,[Validators.required, Validators.minLength(2)]),
+      cnpj: new FormControl(null,[Validators.required, Validators.minLength(14)]),
+      email: new FormControl(null,[Validators.required, Validators.minLength(8)]),
+      password: new FormControl(null,[Validators.required, Validators.minLength(8)]),
+      confirmPassword: new FormControl(null,[Validators.required, Validators.minLength(8)])
     });
   }
 
@@ -59,17 +62,121 @@ export class SignupComponent implements OnInit {
     return this.registerForm.get('confirmPassword');
   }
 
+  // Verify user email
+
+  getUsersList() {
+    try {
+      this.userService.getAllUsers().subscribe((users) => {
+        this.userList = users;
+      });
+    }catch (error) {
+      this.resultErrorMessageUser();
+    }
+  }
+
+  userFoundInList(userToFind: IUser): Boolean {
+    const found = this.userList.find((user) => {
+      return user.email === userToFind.email;
+    });
+    return !(found == undefined);
+  }
+
+  // Verify if the Password is correct
+
+  samePasswordInInputs(): Boolean {
+    if(this.confirmPassword === this.password) {
+      return true;
+    }
+    return false;
+  }
+
+  // Create
+
+  createUser() {
+    const user = this.createObjectUser();
+
+    if(this.userFoundInList(user)) {
+      this.userAlreadyExistsErrorMessage();
+      return false;
+    }
+
+    if(!this.samePasswordInInputs()) {
+      this.passwordIsNotTheSameErrorMessage();
+      return false;
+    }
+
+    try {
+      this.userService.createUser(user).subscribe({
+        next: (r) => this.resultMessageUser(r),
+        error: (e) => this.resultErrorMessageUser(),
+        complete: () => this.router.navigate(['/login']),
+      });
+    }catch (error) {
+      this.resultErrorMessageUser();
+      return false;
+    }
+    return true;
+  }
+
+  createObjectUser(): IUser {
+    return {
+      name: this.name?.value,
+      enterprise: this.enterprise?.value,
+      cnpj: this.cnpj?.value,
+      email: this.email?.value,
+      password: this.password?.value,
+    }
+  }
+
   onSubmit() {
     if(this.registerForm.valid) {
-      this.createObjectUser();
-      this.userService.createUser(this.user);
-    }    
+      this.createUser();
+    }
   }
-  createObjectUser() {
-    this.user.name = this.name?.value;
-    this.user.enterprise = this.enterprise?.value;
-    this.user.cnpj = this.cnpj?.value;
-    this.user.email = this.email?.value;
-    this.user.password = this.password?.value;
+
+  // Messages
+
+  resultMessageUser(result: any) {
+    if(result.name) {
+      this.alertMessage = {
+        title: '',
+        message: 'Usuário cadastrado com sucesso!',
+        typeAlert: SUCCESS,
+      }
+      this.alertService.showGenericAlert(this.alertMessage);
+    }else {
+      this.alertMessage = {
+        title: 'Ocorreu um erro ao cadastrar o Usuário',
+        message: 'Entrar em contato com o administrador do sistema.',
+        typeAlert: ERROR,
+      }
+    }
+  }
+
+  resultErrorMessageUser() {
+    this.alertMessage = {
+      title: 'Ocorreu um erro ao cadastrar o Usuário',
+      message: 'Entrar em contato com o administrador do sistema.',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
+
+  userAlreadyExistsErrorMessage() {
+    this.alertMessage = {
+      title: '',
+      message: 'O e-mail já foi cadastrado',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
+
+  passwordIsNotTheSameErrorMessage() {
+    this.alertMessage = {
+      title: '',
+      message: 'As senhas não correspondem',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
   }
 }

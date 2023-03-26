@@ -1,3 +1,4 @@
+import { IModel } from './model';
 export interface ICollection {
   id?: number;
   name: string;
@@ -5,6 +6,7 @@ export interface ICollection {
   season: string;
   brand: string;
   budget: number;
-  release: Date;
+  release: string;
+  models: number;
   active: boolean;
 }

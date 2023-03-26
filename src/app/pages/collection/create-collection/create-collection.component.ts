@@ -25,7 +25,7 @@ export class CreateCollectionComponent implements OnInit {
     models: 0
   }
 
-  constructor(private activeRoute: ActivatedRoute ,private router: Router, private collectionService: CollectionService, private alertService: AlertService) {
+  constructor(private router: Router, private collectionService: CollectionService, private alertService: AlertService) {
 
   }
 

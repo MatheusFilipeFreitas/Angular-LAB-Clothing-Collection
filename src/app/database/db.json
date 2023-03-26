@@ -25,8 +25,8 @@
       "season": "Summer",
       "brand": "Test of North",
       "budget": 10000,
-      "models": 150,
-      "release": "2018"
+      "release": 10000,
+      "models": 150
     },
     {
       "name": "Extreme Sport",

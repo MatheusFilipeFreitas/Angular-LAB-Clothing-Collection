@@ -1,5 +1,5 @@
 <div class="container">
-  <h3 class="title">Criar Coleção</h3>
+  <h3 class="title">Editar Coleção</h3>
   <form [formGroup]="collectionEditForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-sm">
@@ -47,8 +47,14 @@
       <img src="assets/images/image 1.png" alt="">
     </div>
     <div class="buttons-area">
-      <button (click)="cancel()" class="btn btn-light">Cancelar</button>
-      <button type="submit" class="btn btn-primary">Salvar</button>
+      <div class="left">
+        <button class="btn btn-danger">Excluir</button>
+      </div>
+      <div class="right-area-buttons">
+        <button (click)="cancel()" class="btn btn-light">Cancelar</button>
+        <button type="submit" class="btn btn-primary">Salvar</button>
+      </div>
+
     </div>
   </form>
 </div>

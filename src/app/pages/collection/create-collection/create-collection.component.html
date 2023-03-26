@@ -1,6 +1,6 @@
 <div class="container">
   <h3 class="title">Criar Coleção</h3>
-  <form>
+  <form [formGroup]="collectionCreateForm" (ngSubmit)="onSubmit()">
     <div class="row">
       <div class="col-sm">
         <div class="form-floating">
@@ -47,7 +47,7 @@
       <img src="assets/images/image 1.png" alt="">
     </div>
     <div class="buttons-area">
-      <button class="btn btn-light">Cancelar</button>
+      <button (click)="cancel()" class="btn btn-light">Cancelar</button>
       <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
   </form>

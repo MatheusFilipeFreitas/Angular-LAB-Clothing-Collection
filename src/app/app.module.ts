@@ -18,7 +18,7 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
 import { CreateCollectionComponent } from './pages/collection/create-collection/create-collection.component';
 import { EditCollectionComponent } from './pages/collection/edit-collection/edit-collection.component';
-import { ModelListComponent } from './pages/model/model-list/model-list.component';
+import { ListModelComponent } from './pages/model/list-model/list-model.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +36,7 @@ import { ModelListComponent } from './pages/model/model-list/model-list.componen
     ListCollectionComponent,
     CreateCollectionComponent,
     EditCollectionComponent,
-    ModelListComponent,
+    ListModelComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],

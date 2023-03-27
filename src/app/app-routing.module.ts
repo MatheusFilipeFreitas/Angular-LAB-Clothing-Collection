@@ -1,3 +1,4 @@
+import { ListModelComponent } from './pages/model/list-model/list-model.component';
 import { EditCollectionComponent } from './pages/collection/edit-collection/edit-collection.component';
 import { CreateCollectionComponent } from './pages/collection/create-collection/create-collection.component';
 import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
@@ -61,6 +62,15 @@ const routes: Routes = [
           {
             path: 'update/:id',
             component: EditCollectionComponent
+          }
+        ]
+      },
+      {
+        path: 'models',
+        children: [
+          {
+            path: '',
+            component:  ListModelComponent
           }
         ]
       }

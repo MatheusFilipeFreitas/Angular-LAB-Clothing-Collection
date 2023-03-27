@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="title-line">
+    <h3 class="title">Modelos</h3>
+    <div class="btn-container">
+      <button class="btn btn-primary" (click)="redirectToCreateModel()">Criar Modelo</button>
+    </div>
+  </div>
+
+
+  <div class="table-container">
+    <div style="overflow-y: auto;">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th scope="col">ModeloID</th>
+            <th scope="col">Nomde do Modelo</th>
+            <th scope="col">Responsável</th>
+            <th scope="col">Coleção</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let model of models" (click)="redirectToUpdate(model.id)">
+            <td>{{ model.id }}</td>
+            <td>{{ model.name }}</td>
+            <td>{{ model.accountable }}</td>
+            <td>{{ model.collection }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+</div>

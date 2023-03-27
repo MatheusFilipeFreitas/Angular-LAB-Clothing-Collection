@@ -33,8 +33,9 @@
     {
       "id": 1,
       "name": "Model Test",
+      "accountable": "Yan Esteves",
       "type": "bolsa",
-      "collection": 1,
+      "collection": "Adidas",
       "embroidery": true,
       "stamped": true
     }

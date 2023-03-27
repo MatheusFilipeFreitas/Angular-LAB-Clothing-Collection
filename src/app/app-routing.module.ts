@@ -11,6 +11,7 @@ import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 import { EmailSentComponent } from './pages/email-sent/email-sent.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
+import { CreateModelComponent } from './pages/model/create-model/create-model.component';
 
 const routes: Routes = [
   {
@@ -71,6 +72,10 @@ const routes: Routes = [
           {
             path: '',
             component:  ListModelComponent
+          },
+          {
+            path: 'create',
+            component: CreateModelComponent
           }
         ]
       }

@@ -1,1 +1,72 @@
 
+@import '../../../app.component';
+
+.container {
+  min-width: 100%;
+  padding: 40px 29px;
+}
+
+.title {
+  color: $sign-in-title-color;
+  font-weight: 600;
+  font-size: 28px;
+  margin-top: 7px;
+
+}
+
+.title-line {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 1120px;
+}
+
+.title-line button {
+  width: 220px;
+  height: 50px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: $button-list-color;
+}
+
+.title-line button:hover {
+  background-color: $button-hover;
+}
+
+.container .title {
+  margin-bottom: 35px;
+}
+
+.table-container {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  max-width: 1120px;
+  height: 672px;
+}
+
+.table-container table thead {
+  line-height: 50px;
+}
+
+.table-container table thead th {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 22px;
+}
+
+.table-container table tbody tr {
+  line-height: 60px;
+}
+
+.table-container table tbody tr:hover {
+  cursor: pointer;
+}
+
+.table-container table tbody tr td {
+  font-size: 16px;
+  font-weight: 400;
+  color: $header-icon-color;
+}

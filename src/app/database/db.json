@@ -17,7 +17,18 @@
       "id": 2
     }
   ],
-  "collections": [],
+  "collections": [
+    {
+      "name": "Collection Test",
+      "accountable": "Yan Esteves",
+      "season": "Summer",
+      "brand": "Test of North",
+      "budget": "10000",
+      "release": "10000",
+      "models": 0,
+      "id": 1
+    }
+  ],
   "models": [
     {
       "id": 1,

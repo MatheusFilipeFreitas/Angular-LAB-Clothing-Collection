@@ -43,6 +43,7 @@
   flex-direction: column;
   padding: 30px;
   max-width: 1120px;
+  height: 672px;
 }
 
 .table-container table thead {
@@ -57,6 +58,10 @@
 
 .table-container table tbody tr {
   line-height: 60px;
+}
+
+.table-container table tbody tr:hover {
+  cursor: pointer;
 }
 
 .table-container table tbody tr td {

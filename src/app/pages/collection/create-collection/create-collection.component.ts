@@ -80,6 +80,7 @@ export class CreateCollectionComponent implements OnInit {
       this.resultErrorMessageCollection();
       return false;
     }
+    this.collectionCreateForm.reset();
     return true;
   }
 

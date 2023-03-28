@@ -38,6 +38,15 @@
       "collection": "Adidas",
       "embroidery": true,
       "stamped": true
+    },
+    {
+      "name": "Model Test",
+      "accountable": "Yan Esteves",
+      "type": "Boné",
+      "collection": "Collection Test",
+      "embroidery": true,
+      "stamped": false,
+      "id": 2
     }
   ]
 }

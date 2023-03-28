@@ -84,10 +84,6 @@ export class CreateCollectionComponent implements OnInit {
     return true;
   }
 
-  cancel() {
-    this.router.navigate(['/collections']);
-  }
-
   createObjectCollection(): ICollection {
     return {
       name: this.name?.value,
@@ -106,6 +102,10 @@ export class CreateCollectionComponent implements OnInit {
     }else{
       this.resultBlankInputsCollection();
     }
+  }
+
+  cancel() {
+    this.router.navigate(['/collections']);
   }
 
   resultMessageCollection(result: any) {

@@ -1,7 +1,4 @@
-<div *ngIf="!collections; else loaded" class="loading">
-  Loading...
-</div>
-<ng-template class="container" #loaded>
+<div class="container">
   <h3 class="title">Criar Modelo</h3>
   <form [formGroup]="modelCreateForm" (ngSubmit)="onSubmit()">
     <div class="row">
@@ -40,7 +37,7 @@
     </div>
     <div class="row">
       <div class="col-sm">
-        <p>Possui bordado?</p>
+        <p class="check-caption">Possui bordado?</p>
         <div class="form-check-area">
           <div class="form-check">
             <input formControlName="embroidery" value="yes" class="form-check-input" type="radio" name="embroidery" id="flexRadioDefault1">
@@ -57,7 +54,7 @@
         </div>
       </div>
       <div class="col-sm">
-        <p>Possui estampa?</p>
+        <p class="check-caption">Possui estampa?</p>
         <div class="form-check-area">
           <div class="form-check">
             <input formControlName="stamped" value="yes" class="form-check-input" type="radio" name="stamped" id="flexRadioDefault3">
@@ -82,4 +79,4 @@
       <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
   </form>
-</ng-template>
+</div>

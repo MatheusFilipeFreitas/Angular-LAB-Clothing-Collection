@@ -6,5 +6,4 @@ export interface ICollection {
   brand: string;
   budget: number;
   release: string;
-  models: number;
 }

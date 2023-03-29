@@ -20,6 +20,7 @@ import { CreateCollectionComponent } from './pages/collection/create-collection/
 import { EditCollectionComponent } from './pages/collection/edit-collection/edit-collection.component';
 import { ListModelComponent } from './pages/model/list-model/list-model.component';
 import { CreateModelComponent } from './pages/model/create-model/create-model.component';
+import { EditModelComponent } from './pages/model/edit-model/edit-model.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { CreateModelComponent } from './pages/model/create-model/create-model.co
     EditCollectionComponent,
     ListModelComponent,
     CreateModelComponent,
+    EditModelComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [],

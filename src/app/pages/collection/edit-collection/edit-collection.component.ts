@@ -23,8 +23,7 @@ export class EditCollectionComponent implements OnInit {
     season: '',
     brand: '',
     budget: 0,
-    release: '',
-    models: 0
+    release: ''
   }
 
   constructor(private activeRoute: ActivatedRoute ,private router: Router, private collectionService: CollectionService, private alertService: AlertService) {
@@ -120,8 +119,7 @@ export class EditCollectionComponent implements OnInit {
       season: this.season?.value,
       brand: this.brand?.value,
       budget: this.budget?.value,
-      release: this.budget?.value,
-      models: this.collection.models,
+      release: this.budget?.value
     }
   }
 

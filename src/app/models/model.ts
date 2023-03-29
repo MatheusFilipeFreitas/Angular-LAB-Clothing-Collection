@@ -3,7 +3,7 @@ export interface IModel {
   name: string;
   accountable: string;
   type: string;
-  collection: string;
+  collection: number;
   embroidery: boolean;
   stamped: boolean;
 }

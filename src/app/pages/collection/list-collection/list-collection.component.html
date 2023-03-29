@@ -20,11 +20,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let collection of collections" (click)="redirectToUpdate(collection.id)">
+          <tr *ngFor="let collection of collectionWithModelQuantity" (click)="redirectToUpdate(collection.id)">
             <td>{{ collection.name }}</td>
             <td>{{ collection.accountable }}</td>
             <td>{{ collection.season + ' - ' + collection.release }}</td>
-            <td>{{ collection.models }}</td>
+            <td>{{ collection.modelsQuantity }} </td>
             <td>{{ collection.budget | currency: 'BRL' }}</td>
           </tr>
         </tbody>

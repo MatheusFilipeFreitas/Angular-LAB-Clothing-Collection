@@ -1,3 +1,5 @@
+import { IModel } from './../../../models/model';
+import { ModelService } from './../../../services/model.service';
 import { ICollection } from './../../../models/collection';
 import { CollectionService } from './../../../services/collection.service';
 import { Router } from '@angular/router';
@@ -9,25 +11,46 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-collection.component.scss']
 })
 
-// TODO: custom style of table rows when is hover
-
 export class ListCollectionComponent implements OnInit{
-
   collections!: ICollection[];
+  models!: IModel[];
+  collectionWithModelQuantity: any[] = [];
 
-  constructor(private router: Router, private collectionService: CollectionService) {
+  constructor(private router: Router, private collectionService: CollectionService, private modelService: ModelService) {
 
   }
 
   ngOnInit(): void {
     this.getListOfCollections();
+    this.getListOfModels();
+    setTimeout(() => {
+      this.collectionWithModelQuantity = this.getModelQuantityByCollection();
+    }, 100);
   }
 
   getListOfCollections() {
-    this.collectionService.getAllCollections().subscribe((collections) => {
-      this.collections = collections;
-
+    this.collectionService.getAllCollections().toPromise().then((collections) => {
+      this.collections = collections!;
     });
+  }
+
+  getListOfModels() {
+    this.modelService.getAllModels().subscribe((models) => {
+      this.models = models;
+    })
+  }
+
+  getModelQuantityByCollection() {
+    const returnValue: any[] = [];
+    this.collections.forEach((collection, i) => {
+      const modelByCollection = this.models.filter(model => model.collection === collection.id);
+      const object = {
+        ...this.collections[i],
+        modelsQuantity: modelByCollection.length
+      }
+      returnValue.push(object);
+    })
+    return returnValue;
   }
 
   redirectToCreateCollection() {

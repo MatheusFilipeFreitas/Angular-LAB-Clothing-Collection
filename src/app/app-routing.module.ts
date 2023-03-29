@@ -1,3 +1,5 @@
+import { LoggedGuard } from './guard/logged.guard';
+import { AuthGuard } from './guard/auth.guard';
 import { EditModelComponent } from './pages/model/edit-model/edit-model.component';
 import { ListModelComponent } from './pages/model/list-model/list-model.component';
 import { EditCollectionComponent } from './pages/collection/edit-collection/edit-collection.component';
@@ -10,7 +12,6 @@ import { FullComponent } from './layouts/full/full.component';
 import { WrapperComponent } from './layouts/wrapper/wrapper.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { EmailSentComponent } from './pages/email-sent/email-sent.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { CreateModelComponent } from './pages/model/create-model/create-model.component';
 
@@ -18,6 +19,7 @@ const routes: Routes = [
   {
     path: '',
     component: WrapperComponent,
+    canActivate: [LoggedGuard],
     children: [
       {
         path: '',
@@ -35,16 +37,13 @@ const routes: Routes = [
       {
         path: 'password-recovery',
         component: ForgotPasswordComponent
-      },
-      {
-        path: 'email-sent/:id',
-        component: EmailSentComponent
       }
     ]
   },
   {
     path: '',
     component: FullComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'dashboard',

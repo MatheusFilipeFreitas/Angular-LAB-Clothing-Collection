@@ -2,13 +2,13 @@
   <h3 class="title">Dashboard</h3>
   <div class="row">
     <div class="col-sm">
-      <app-card [title]="'Coleções'" [value]="25"></app-card>
+      <app-card [title]="'Coleções'" [value]="collectionQuantity"></app-card>
     </div>
     <div class="col-sm">
-      <app-card [title]="'Modelos'" [value]="64"></app-card>
+      <app-card [title]="'Modelos'" [value]="modelQuantity"></app-card>
     </div>
     <div class="col-sm">
-      <app-card [title]="'Orçamento Médio'" [value]="4700"></app-card>
+      <app-card [title]="'Orçamento Médio (R$)'" [value]="totalBudget"></app-card>
     </div>
   </div>
   <div class="table-container">

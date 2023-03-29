@@ -52,11 +52,14 @@ export class ForgotPasswordComponent implements OnInit{
   }
 
   onSubmit() {
-    if(this.findEmailInUserList()) {
-      this.router.navigate([`/email-sent/${this.userFound.id}`]);
-    }else{
-      //TODO: toast with error
+    const result = this.findEmailInUserList();
+    if(!result) {
+
     }
+  }
+
+  redirectToLogin() {
+    this.router.navigate(['/login']);
   }
 
 }

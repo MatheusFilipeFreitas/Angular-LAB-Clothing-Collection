@@ -1,0 +1,67 @@
+@import '../../../app.component';
+
+.container {
+  min-width: 100%;
+  padding: 40px 29px;
+}
+
+.title {
+  color: $sign-in-title-color;
+  font-weight: 600;
+  font-size: 28px;
+  margin: 7px 0px 60px 0px;
+}
+
+form {
+  max-width: 1120px;
+  width: 100%;
+  background-color: white;
+  padding: 100px 55px;
+  border-radius: 10px;
+}
+
+form .row {
+  gap: 80px;
+  margin-bottom: 43px;
+}
+
+form .form-floating label {
+  font-weight: 400;
+  font-size: 14px;
+  color: $sign-in-credentials-color;
+}
+
+form .img-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form .buttons-area {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 49px;
+}
+
+form .buttons-area button {
+  width: 180px;
+  height: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: 45px;
+}
+
+form .buttons-area .btn-primary {
+  background-color: $button-color;
+}
+
+form .buttons-area .btn-primary:hover {
+  background-color: $button-hover;
+}
+
+form .buttons-area .btn-light {
+  color: $cancel-button-color;
+}

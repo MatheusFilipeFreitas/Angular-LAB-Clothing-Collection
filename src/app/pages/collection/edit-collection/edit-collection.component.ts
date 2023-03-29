@@ -125,7 +125,6 @@ export class EditCollectionComponent implements OnInit {
 
   onSubmit() {
     if(this.collectionEditForm.valid){
-      this.createCollectionObject();
       this.updateCollection();
     }else{
       this.inputBlankErrorMessage();

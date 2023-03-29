@@ -157,15 +157,6 @@ export class CreateModelComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageUpdateColletion() {
-    this.alertMessage = {
-      title: 'Ocorreu um erro ao atualizas a Coleção selecionada',
-      message: 'Entrar em contato com o administrador do sistema.',
-      typeAlert: ERROR,
-    };
-    this.alertService.showGenericAlert(this.alertMessage);
-  }
-
   resultBlankInputsCollection() {
     this.alertMessage = {
       title: '',

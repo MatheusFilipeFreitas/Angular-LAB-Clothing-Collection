@@ -17,62 +17,6 @@
       "id": 2
     }
   ],
-  "collections": [
-    {
-      "name": "Collection Test",
-      "accountable": "Yan Esteves",
-      "season": "Summer",
-      "brand": "Test of North",
-      "budget": "10000",
-      "release": "2018",
-      "id": 1
-    },
-    {
-      "name": "Collection",
-      "accountable": "Test",
-      "season": "Summer",
-      "brand": "ASDSADASDSDAADS",
-      "budget": "30000",
-      "release": "2020",
-      "id": 2
-    }
-  ],
-  "models": [
-    {
-      "name": "Collection Test",
-      "accountable": "Yan Esteves",
-      "type": "Biquini",
-      "collection": 1,
-      "embroidery": true,
-      "stamped": false,
-      "id": 1
-    },
-    {
-      "name": "Collection Tester",
-      "accountable": "Yan Esteves",
-      "type": "Chapéu",
-      "collection": 1,
-      "embroidery": false,
-      "stamped": true,
-      "id": 2
-    },
-    {
-      "name": "Model Test",
-      "accountable": "asdassadads",
-      "type": "Bermuda",
-      "collection": 2,
-      "embroidery": true,
-      "stamped": true,
-      "id": 3
-    },
-    {
-      "name": "Modelo Model",
-      "accountable": "asdassadads",
-      "type": "Saia",
-      "collection": 1,
-      "embroidery": true,
-      "stamped": true,
-      "id": 4
-    }
-  ]
+  "collections": [],
+  "models": []
 }

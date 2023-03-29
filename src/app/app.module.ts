@@ -1,3 +1,4 @@
+import { AuthGuard } from './guard/auth.guard';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -13,7 +14,6 @@ import { CardComponent } from './components/card/card.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SignupComponent } from './pages/signup/signup.component';
 import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
-import { EmailSentComponent } from './pages/email-sent/email-sent.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { ListCollectionComponent } from './pages/collection/list-collection/list-collection.component';
 import { CreateCollectionComponent } from './pages/collection/create-collection/create-collection.component';
@@ -33,7 +33,6 @@ import { EditModelComponent } from './pages/model/edit-model/edit-model.componen
     LoginComponent,
     SignupComponent,
     ForgotPasswordComponent,
-    EmailSentComponent,
     DashboardComponent,
     ListCollectionComponent,
     CreateCollectionComponent,
@@ -43,7 +42,7 @@ import { EditModelComponent } from './pages/model/edit-model/edit-model.componen
     EditModelComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

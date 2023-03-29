@@ -79,7 +79,7 @@ const routes: Routes = [
             component: CreateModelComponent
           },
           {
-            path: 'edit/:id',
+            path: 'update/:id',
             component: EditModelComponent
           }
         ]

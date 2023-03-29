@@ -24,7 +24,7 @@ export class CreateModelComponent implements OnInit {
     name: '',
     accountable: '',
     type: '',
-    collection: '',
+    collection: 0,
     embroidery: false,
     stamped: false,
   }
@@ -151,6 +151,15 @@ export class CreateModelComponent implements OnInit {
   resultErrorMessageColletion(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar as Coleções',
+      message: 'Entrar em contato com o administrador do sistema.',
+      typeAlert: ERROR,
+    };
+    this.alertService.showGenericAlert(this.alertMessage);
+  }
+
+  resultErrorMessageUpdateColletion() {
+    this.alertMessage = {
+      title: 'Ocorreu um erro ao atualizas a Coleção selecionada',
       message: 'Entrar em contato com o administrador do sistema.',
       typeAlert: ERROR,
     };

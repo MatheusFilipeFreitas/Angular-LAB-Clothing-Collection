@@ -21,8 +21,7 @@ export class CreateCollectionComponent implements OnInit {
     season: '',
     brand: '',
     budget: 0,
-    release: '',
-    models: 0
+    release: ''
   }
 
   constructor(private router: Router, private collectionService: CollectionService, private alertService: AlertService) {
@@ -91,8 +90,7 @@ export class CreateCollectionComponent implements OnInit {
       season: this.season?.value,
       brand: this.brand?.value,
       budget: this.budget?.value,
-      release: this.budget?.value,
-      models: 0,
+      release: this.release?.value
     }
   }
 

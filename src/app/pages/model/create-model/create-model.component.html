@@ -23,7 +23,7 @@
         <div class="form-floating">
           <select [class]="collection!.errors?.['required'] && collection!.touched || collection!.errors?.['minlength'] ? 'is-invalid' : ''" formControlName="collection" class="form-select" id="floatingSelect" aria-label="Floating label select example">
             <option selected value="">-</option>
-            <option *ngFor="let collection of collections; index as i" [ngValue]="collection.name">{{ collection.name }}</option>
+            <option *ngFor="let collection of collections; index as i" [ngValue]="collection.id">{{ collection.name }}</option>
           </select>
           <label for="floatingSelect">Selecionar Coleção</label>
         </div>
@@ -75,7 +75,7 @@
       <img src="assets/images/image 1.png" alt="">
     </div>
     <div class="buttons-area">
-      <button (click)="cancel()" class="btn btn-light">Cancelar</button>
+      <button (click)="cancel()" type="button" class="btn btn-light">Cancelar</button>
       <button type="submit" class="btn btn-primary">Salvar</button>
     </div>
   </form>

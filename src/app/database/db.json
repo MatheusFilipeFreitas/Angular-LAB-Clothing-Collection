@@ -24,29 +24,55 @@
       "season": "Summer",
       "brand": "Test of North",
       "budget": "10000",
-      "release": "10000",
-      "models": 0,
+      "release": "2018",
       "id": 1
+    },
+    {
+      "name": "Collection",
+      "accountable": "Test",
+      "season": "Summer",
+      "brand": "ASDSADASDSDAADS",
+      "budget": "30000",
+      "release": "2020",
+      "id": 2
     }
   ],
   "models": [
     {
-      "id": 1,
-      "name": "Model Test",
+      "name": "Collection Test",
       "accountable": "Yan Esteves",
-      "type": "bolsa",
-      "collection": "Adidas",
+      "type": "Biquini",
+      "collection": 1,
       "embroidery": true,
-      "stamped": true
+      "stamped": false,
+      "id": 1
+    },
+    {
+      "name": "Collection Tester",
+      "accountable": "Yan Esteves",
+      "type": "Chapéu",
+      "collection": 1,
+      "embroidery": false,
+      "stamped": true,
+      "id": 2
     },
     {
       "name": "Model Test",
-      "accountable": "Yan Esteves",
-      "type": "Boné",
-      "collection": "Collection Test",
+      "accountable": "asdassadads",
+      "type": "Bermuda",
+      "collection": 2,
       "embroidery": true,
-      "stamped": false,
-      "id": 2
+      "stamped": true,
+      "id": 3
+    },
+    {
+      "name": "Modelo Model",
+      "accountable": "asdassadads",
+      "type": "Saia",
+      "collection": 1,
+      "embroidery": true,
+      "stamped": true,
+      "id": 4
     }
   ]
 }

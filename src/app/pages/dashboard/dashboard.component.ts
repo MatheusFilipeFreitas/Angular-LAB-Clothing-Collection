@@ -14,45 +14,13 @@ import { ERROR } from 'src/app/common/alert-state';
 })
 export class DashboardComponent implements OnInit {
 
-  biggerBudgets: any[] = [
-    {
-      collection: "Adidas",
-      accountable: "Yan Esteves",
-      model: 10,
-      budget: 9500
-    },
-    {
-      collection: "Renner",
-      accountable: "Yan Esteves",
-      model: 10,
-      budget: 3500
-    },
-    {
-      collection: "PatBO",
-      accountable: "Yan Esteves",
-      model: 10,
-      budget: 8700
-    },
-    {
-      collection: "Nike",
-      accountable: "Yan Esteves",
-      model: 10,
-      budget: 9100
-    },
-    {
-      collection: "Pollo",
-      accountable: "Yan Esteves",
-      model: 10,
-      budget: 10000
-    },
-  ]
-
   collections!: ICollection[];
   models!: IModel[];
   alertMessage!: IAlert;
   collectionQuantity: number = 0;
   modelQuantity: number = 0;
   totalBudget: number = 0;
+  collectionWithModelQuantity: any[] = [];
 
   constructor(private collectionService: CollectionService, private modelService: ModelService, private alertService: AlertService) {
 
@@ -60,39 +28,39 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit(): void {
     this.getCollections();
-    this.getModels();
-    this.sortingData();
   }
 
   getCollections() {
-    try {
-      this.collectionService.getAllCollections().subscribe((collections) => {
-        this.collections = collections;
+    try{
+      this.collectionService.getAllCollectionsSorted().subscribe((collections) => {
+        this.collections = collections!;
         this.collectionQuantity = collections.length;
         this.totalBudget = this.getTotalBudget(collections);
-      })
-    }catch(error) {
-      this.resultErrorMessageCollections();
-    }
-  }
-
-  getModels() {
-    try {
-      this.modelService.getAllModels().subscribe((models) => {
-        this.models = models;
-        this.modelQuantity = models.length;
-      })
+        this.getModels();
+      });
     }catch(error) {
       this.resultErrorMessageModels();
     }
   }
 
-  sortingData() {
-    this.biggerBudgets.sort((a, b) => {
-      return b.budget - a.budget;
-    })
+  getModels() {
+    try{
+      this.modelService.getAllModels().subscribe((models) => {
+        this.models = models;
+        this.modelQuantity = models.length;
+        this.collectionWithModelQuantity = this.getModelQuantityByCollection();
+      });
+    }catch(error) {
+      this.resultErrorMessageModels();
+    }
   }
 
+  getModelQuantityByCollection() {
+    return this.collections.map(collection => ({
+      ...collection,
+      modelsQuantity: this.models.filter(model => model.collection === collection.id).length
+    }));
+  }
   getTotalBudget(collections: ICollection[]): number {
     let sum = 0;
     for(let collection of collections) {

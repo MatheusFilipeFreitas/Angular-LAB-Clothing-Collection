@@ -32,13 +32,13 @@
     <div class="row">
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="budget" [class]="budget!.errors?.['required'] && budget!.touched || budget!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingBudget" placeholder="Nome">
+          <input formControlName="budget" [class]="budget!.errors?.['required'] && budget!.touched || budget!.errors?.['min'] ? 'is-invalid' : ''" type="number" class="form-control" id="floatingBudget" placeholder="Nome">
           <label for="floatingInput">Qual é o orçamento desta Coleção?</label>
         </div>
       </div>
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="release" [class]="release!.errors?.['required'] && release!.touched || release!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingRelease" placeholder="Nome">
+          <input formControlName="release" [class]="release!.errors?.['required'] && release!.touched || release!.errors?.['min'] || release!.errors?.['minLength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingRelease" placeholder="Nome">
           <label for="floatingInput">Ano de Lançamento</label>
         </div>
       </div>

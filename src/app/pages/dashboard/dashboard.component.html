@@ -23,11 +23,11 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let budget of biggerBudgets">
-          <td>{{budget.collection}}</td>
-          <td>{{budget.accountable}}</td>
-          <td>{{budget.model}}</td>
-          <td>{{budget.budget | currency: 'BRL'}}</td>
+        <tr *ngFor="let collection of collectionWithModelQuantity | slice:0:5">
+          <td>{{collection.name}}</td>
+          <td>{{collection.accountable}}</td>
+          <td>{{collection.modelsQuantity}}</td>
+          <td>{{collection.budget | currency: 'BRL'}}</td>
         </tr>
       </tbody>
     </table>

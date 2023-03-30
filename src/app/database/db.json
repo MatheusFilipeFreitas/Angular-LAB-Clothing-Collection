@@ -23,18 +23,27 @@
       "accountable": "Yan Esteves",
       "season": "Summer",
       "brand": "Test of North",
-      "budget": "50000",
+      "budget": 50000,
       "release": "2018",
       "id": 1
+    },
+    {
+      "name": "Model Test",
+      "accountable": "Yan Esteves",
+      "season": "Summer",
+      "brand": "Test of North",
+      "budget": 10000000,
+      "release": "2024",
+      "id": 2
     }
   ],
   "models": [
     {
-      "name": "Model Updated",
+      "name": "Model",
       "accountable": "Yan Esteves",
       "type": "Boné",
       "collection": 1,
-      "embroidery": true,
+      "embroidery": false,
       "stamped": true,
       "id": 1
     }

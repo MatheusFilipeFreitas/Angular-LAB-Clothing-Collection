@@ -38,8 +38,8 @@ export class CreateCollectionComponent implements OnInit {
       accountable: new FormControl(null,[Validators.required, Validators.minLength(3)]),
       season: new FormControl(null,[Validators.required, Validators.minLength(3)]),
       brand: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      budget: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      release: new FormControl(null,[Validators.required, Validators.minLength(3)]),
+      budget: new FormControl(null,[Validators.required, Validators.min(0)]),
+      release: new FormControl(null,[Validators.required, Validators.min(new Date().getFullYear()), Validators.minLength(4)]),
     });
   }
 

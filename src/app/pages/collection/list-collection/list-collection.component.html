@@ -1,35 +1,40 @@
 <div class="container">
-  <div class="title-line">
-    <h3 class="title">Coleções</h3>
-    <div class="btn-container">
-      <button class="btn btn-primary" (click)="redirectToCreateCollection()">Criar Coleção</button>
-    </div>
+  <div *ngIf="!collectionWithModelQuantity; else loaded">
+    Loading...
   </div>
-
-
-  <div class="table-container">
-    <div style="overflow-y: auto;">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col">Coleção</th>
-            <th scope="col">Responsável</th>
-            <th scope="col">Estação - Lançamento</th>
-            <th scope="col">Modelos</th>
-            <th scope="col">Orçamento</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let collection of collectionWithModelQuantity" (click)="redirectToUpdate(collection.id)">
-            <td>{{ collection.name }}</td>
-            <td>{{ collection.accountable }}</td>
-            <td>{{ collection.season + ' - ' + collection.release }}</td>
-            <td>{{ collection.modelsQuantity }} </td>
-            <td>{{ collection.budget | currency: 'BRL' }}</td>
-          </tr>
-        </tbody>
-      </table>
+  <ng-template #loaded>
+    <div class="title-line">
+      <h3 class="title">Coleções</h3>
+      <div class="btn-container">
+        <button class="btn btn-primary" (click)="redirectToCreateCollection()">Criar Coleção</button>
+      </div>
     </div>
-  </div>
 
+
+    <div class="table-container">
+      <div style="overflow-y: auto;">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Coleção</th>
+              <th scope="col">Responsável</th>
+              <th scope="col">Estação - Lançamento</th>
+              <th scope="col">Modelos</th>
+              <th scope="col">Orçamento</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let collection of collectionWithModelQuantity" (click)="redirectToUpdate(collection.id)">
+              <td>{{ collection.name }}</td>
+              <td>{{ collection.accountable }}</td>
+              <td>{{ collection.season + ' - ' + collection.release }}</td>
+              <td>{{ collection.modelsQuantity }} </td>
+              <td>{{ collection.budget | currency: 'BRL' }}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+  </ng-template>
 </div>

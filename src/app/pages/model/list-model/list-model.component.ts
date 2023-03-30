@@ -30,11 +30,14 @@ export class ListModelComponent {
   }
 
   getListOfCollections() {
-    this.collectionService.getAllCollections().subscribe((collections) => {
-      this.collections = collections;
-    } )
+    this.collectionService.getAllCollections().subscribe((colletions) => {
+      this.collections = colletions;
+    })
   }
 
+  getCollectionName(id: number) {
+    return this.collections.find((collection) => collection.id === id)?.name;
+  }
 
   redirectToCreateModel() {
     this.router.navigate(['/models/create'])

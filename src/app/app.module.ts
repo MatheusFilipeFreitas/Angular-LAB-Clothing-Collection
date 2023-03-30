@@ -21,6 +21,7 @@ import { EditCollectionComponent } from './pages/collection/edit-collection/edit
 import { ListModelComponent } from './pages/model/list-model/list-model.component';
 import { CreateModelComponent } from './pages/model/create-model/create-model.component';
 import { EditModelComponent } from './pages/model/edit-model/edit-model.component';
+import { NumberAbbreviationPipe } from './common/pipe/number-abbreviation.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { EditModelComponent } from './pages/model/edit-model/edit-model.componen
     ListModelComponent,
     CreateModelComponent,
     EditModelComponent,
+    NumberAbbreviationPipe
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [AuthGuard],

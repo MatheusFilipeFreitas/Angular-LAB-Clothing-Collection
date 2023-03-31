@@ -1,0 +1,391 @@
+{
+  "users": [
+    {
+      "name": "Ana Silva",
+      "enterprise": "ABC Corporation",
+      "cnpj": "12345678910111",
+      "email": "ana.silva@abccorp.com",
+      "password": "abc12345",
+      "id": 1
+    },
+    {
+      "name": "John Doe",
+      "enterprise": "XYZ Inc.",
+      "cnpj": "12345678910112",
+      "email": "john.doe@xyzinc.com",
+      "password": "xyz12345",
+      "id": 2
+    },
+    {
+      "name": "Sarah Lee",
+      "enterprise": "ACME Corporation",
+      "cnpj": "12345678910113",
+      "email": "sarah.lee@acmecorp.com",
+      "password": "acme12345",
+      "id": 3
+    },
+    {
+      "name": "Administrator",
+      "enterprise": "EveryOne",
+      "cnpj": "12345678910113",
+      "email": "master@adm.com",
+      "password": "adm12345",
+      "id": 4
+    }
+  ],
+  "collections": [
+    {
+      "name": "Vintage Chic",
+      "accountable": "John Doe",
+      "season": "Summer",
+      "brand": "Doe & Co.",
+      "budget": 80000,
+      "release": "2022",
+      "id": 1
+    },
+    {
+      "name": "Urban Jungle",
+      "accountable": "Jane Smith",
+      "season": "Winter",
+      "brand": "Smith Co.",
+      "budget": 95000,
+      "release": "2022",
+      "id": 2
+    },
+    {
+      "name": "Bohemian Dream",
+      "accountable": "John Doe",
+      "season": "Spring",
+      "brand": "Doe & Co.",
+      "budget": 85000,
+      "release": "2023",
+      "id": 3
+    },
+    {
+      "name": "Electric Avenue",
+      "accountable": "Jane Smith",
+      "season": "Fall",
+      "brand": "Smith Co.",
+      "budget": 90000,
+      "release": "2023",
+      "id": 4
+    },
+    {
+      "name": "Minimalist Luxe",
+      "accountable": "Tom Brown",
+      "season": "Summer",
+      "brand": "Brown Corp.",
+      "budget": 65000,
+      "release": "2023",
+      "id": 5
+    },
+    {
+      "name": "Wild West",
+      "accountable": "Lisa Jones",
+      "season": "Spring",
+      "brand": "Jones & Co.",
+      "budget": 120000,
+      "release": "2022",
+      "id": 6
+    },
+    {
+      "name": "Midnight Magic",
+      "accountable": "Mike Johnson",
+      "season": "Winter",
+      "brand": "Johnson Inc.",
+      "budget": 80000,
+      "release": "2023",
+      "id": 7
+    },
+    {
+      "name": "Tropical Paradise",
+      "accountable": "Emily Davis",
+      "season": "Summer",
+      "brand": "Davis & Co.",
+      "budget": 55000,
+      "release": "2022",
+      "id": 8
+    },
+    {
+      "name": "Romantic Renaissance",
+      "accountable": "Mark Wilson",
+      "season": "Fall",
+      "brand": "Wilson Corp.",
+      "budget": 95000,
+      "release": "2022",
+      "id": 9
+    },
+    {
+      "name": "Futuristic Edge",
+      "accountable": "Maria Garcia",
+      "season": "Winter",
+      "brand": "Garcia & Co.",
+      "budget": 70000,
+      "release": "2022",
+      "id": 10
+    },
+    {
+      "name": "Glamorous Nights",
+      "accountable": "David Lee",
+      "season": "Spring",
+      "brand": "Lee Corp.",
+      "budget": 115000,
+      "release": "2023",
+      "id": 11
+    },
+    {
+      "name": "Rock and Roll Rebel",
+      "accountable": "Amy Taylor",
+      "season": "Summer",
+      "brand": "Taylor Inc.",
+      "budget": 60000,
+      "release": "2022",
+      "id": 12
+    },
+    {
+      "name": "Sporty Spice",
+      "accountable": "Chris Hernandez",
+      "season": "Fall",
+      "brand": "Hernandez Co.",
+      "budget": 100000,
+      "release": "2022",
+      "id": 13
+    }
+  ],
+  "models": [
+    {
+      "name": "Formal",
+      "accountable": "John Doe",
+      "type": "Bermuda",
+      "collection": 2,
+      "embroidery": true,
+      "stamped": false,
+      "id": 1
+    },
+    {
+      "name": "Sportswear",
+      "accountable": "Mary Johnson",
+      "type": "Calça",
+      "collection": 6,
+      "embroidery": true,
+      "stamped": true,
+      "id": 2
+    },
+    {
+      "name": "Business",
+      "accountable": "Robert Smith",
+      "type": "Biquini",
+      "collection": 3,
+      "embroidery": true,
+      "stamped": false,
+      "id": 3
+    },
+    {
+      "name": "Casual",
+      "accountable": "Sam Wilson",
+      "type": "Bolsa",
+      "collection": 5,
+      "embroidery": false,
+      "stamped": true,
+      "id": 5
+    },
+    {
+      "name": "Formal",
+      "accountable": "Emily Davis",
+      "type": "Boné",
+      "collection": 2,
+      "embroidery": true,
+      "stamped": false,
+      "id": 6
+    },
+    {
+      "name": "Sportswear",
+      "accountable": "Mark Wilson",
+      "type": "Camisa",
+      "collection": 7,
+      "embroidery": false,
+      "stamped": true,
+      "id": 7
+    },
+    {
+      "name": "Business",
+      "accountable": "Sarah Williams",
+      "type": "Chapéu",
+      "collection": 3,
+      "embroidery": true,
+      "stamped": false,
+      "id": 8
+    },
+    {
+      "name": "Casual",
+      "accountable": "Chris Lee",
+      "type": "Saia",
+      "collection": 5,
+      "embroidery": false,
+      "stamped": true,
+      "id": 9
+    },
+    {
+      "name": "Formal",
+      "accountable": "Rachel Johnson",
+      "type": "Bermuda",
+      "collection": 2,
+      "embroidery": true,
+      "stamped": false,
+      "id": 10
+    },
+    {
+      "name": "Sportswear",
+      "accountable": "David Kim",
+      "type": "Calça",
+      "collection": 7,
+      "embroidery": false,
+      "stamped": true,
+      "id": 11
+    },
+    {
+      "name": "Business",
+      "accountable": "Karen Brown",
+      "type": "Biquini",
+      "collection": 3,
+      "embroidery": true,
+      "stamped": false,
+      "id": 12
+    },
+    {
+      "name": "Casual",
+      "accountable": "Tom Anderson",
+      "type": "Bolsa",
+      "collection": 5,
+      "embroidery": false,
+      "stamped": true,
+      "id": 13
+    },
+    {
+      "name": "Classic",
+      "accountable": "Lisa Jones",
+      "type": "Boné",
+      "collection": 6,
+      "embroidery": true,
+      "stamped": false,
+      "id": 14
+    },
+    {
+      "name": "Cozy",
+      "accountable": "Mike Johnson",
+      "type": "Camisa",
+      "collection": 7,
+      "embroidery": false,
+      "stamped": true,
+      "id": 15
+    },
+    {
+      "name": "Sporty",
+      "accountable": "Emily Davis",
+      "type": "Chapéu",
+      "collection": 8,
+      "embroidery": false,
+      "stamped": false,
+      "id": 16
+    },
+    {
+      "name": "Elegant",
+      "accountable": "Mark Wilson",
+      "type": "Saia",
+      "collection": 9,
+      "embroidery": true,
+      "stamped": true,
+      "id": 17
+    },
+    {
+      "name": "Funky",
+      "accountable": "Maria Garcia",
+      "type": "Bermuda",
+      "collection": 10,
+      "embroidery": false,
+      "stamped": false,
+      "id": 18
+    },
+    {
+      "name": "Sophisticated",
+      "accountable": "David Lee",
+      "type": "Calça",
+      "collection": 11,
+      "embroidery": true,
+      "stamped": false,
+      "id": 19
+    },
+    {
+      "name": "Vintage",
+      "accountable": "Amy Taylor",
+      "type": "Biquini",
+      "collection": 12,
+      "embroidery": true,
+      "stamped": true,
+      "id": 20
+    },
+    {
+      "name": "Romantic",
+      "accountable": "Chris Hernandez",
+      "type": "Bolsa",
+      "collection": 13,
+      "embroidery": true,
+      "stamped": true,
+      "id": 21
+    },
+    {
+      "name": "Beachy",
+      "accountable": "Jane Smith",
+      "type": "Boné",
+      "collection": 4,
+      "embroidery": false,
+      "stamped": false,
+      "id": 22
+    },
+    {
+      "name": "Comfy",
+      "accountable": "Tom Brown",
+      "type": "Camisa",
+      "collection": 5,
+      "embroidery": false,
+      "stamped": false,
+      "id": 23
+    },
+    {
+      "name": "Office Chic",
+      "accountable": "Lisa Jones",
+      "type": "Chapéu",
+      "collection": 6,
+      "embroidery": false,
+      "stamped": true,
+      "id": 24
+    },
+    {
+      "name": "Casual Cool",
+      "accountable": "Mike Johnson",
+      "type": "Saia",
+      "collection": 7,
+      "embroidery": false,
+      "stamped": false,
+      "id": 25
+    },
+    {
+      "name": "Sporty Chic",
+      "accountable": "Emily Davis",
+      "type": "Bermuda",
+      "collection": 8,
+      "embroidery": false,
+      "stamped": false,
+      "id": 26
+    },
+    {
+      "name": "Sporty Chic",
+      "accountable": "Emily Davis",
+      "type": "Saia",
+      "collection": 1,
+      "embroidery": false,
+      "stamped": false,
+      "id": 27
+    }
+  ]
+}

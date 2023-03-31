@@ -1,3 +1,4 @@
+import { BuildingComponent } from './pages/building/building.component';
 import { LoggedGuard } from './guard/logged.guard';
 import { AuthGuard } from './guard/auth.guard';
 import { EditModelComponent } from './pages/model/edit-model/edit-model.component';
@@ -50,6 +51,14 @@ const routes: Routes = [
         component: DashboardComponent
       },
       {
+        path: 'help',
+        component: BuildingComponent
+      },
+      {
+        path: 'comments',
+        component: BuildingComponent
+      },
+      {
         path: 'collections',
         children: [
           {
@@ -83,7 +92,6 @@ const routes: Routes = [
           }
         ]
       }
-
     ]
   }
 ];

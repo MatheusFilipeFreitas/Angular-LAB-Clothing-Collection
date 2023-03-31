@@ -13,24 +13,26 @@
   </div>
   <div class="table-container">
     <caption>Maiores Orçamentos</caption>
-    <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">Coleção</th>
-          <th scope="col">Responsável</th>
-          <th scope="col">Modelos</th>
-          <th scope="col">Orçamento</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let collection of collectionWithModelQuantity | slice:0:5">
-          <td>{{collection.name}}</td>
-          <td>{{collection.accountable}}</td>
-          <td>{{collection.modelsQuantity}}</td>
-          <td>{{collection.budget | currency: 'BRL'}}</td>
-        </tr>
-      </tbody>
-    </table>
+    <div style="overflow-y: auto;">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Coleção</th>
+            <th scope="col">Responsável</th>
+            <th scope="col">Modelos</th>
+            <th scope="col">Orçamento</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let collection of collectionWithModelQuantity | slice:0:5">
+            <td>{{collection.name}}</td>
+            <td>{{collection.accountable}}</td>
+            <td>{{collection.modelsQuantity}}</td>
+            <td>{{collection.budget | currency: 'BRL'}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 
 </div>

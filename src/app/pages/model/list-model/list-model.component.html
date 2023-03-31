@@ -26,6 +26,9 @@
               <td>{{ model.name }}</td>
               <td>{{ model.accountable }}</td>
               <td>{{ getCollectionName(model.collection) }}</td>
+              <div *ngIf="models.length == 0" class="alert alert-info" role="alert">
+                Crie uma coleção para começar a mostrar os modelos.
+              </div>
             </tr>
           </tbody>
         </table>

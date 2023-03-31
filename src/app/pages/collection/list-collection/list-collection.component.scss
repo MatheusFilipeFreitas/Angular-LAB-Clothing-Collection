@@ -44,6 +44,17 @@
   padding: 30px;
   max-width: 1120px;
   height: 672px;
+  position: relative;
+}
+
+.alert-info {
+  position: absolute;
+  margin-left: 30%;
+  margin-right: 30%;
+  left: 0;
+  right: 0;
+  text-align: center;
+  margin-top: 30px;
 }
 
 .table-container table thead {

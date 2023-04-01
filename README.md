@@ -52,7 +52,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://media.licdn.com/dms/image/C4D0BAQGcs8aDa4BZOQ/company-logo_200_200/0/1668186440015?e=2147483647&v=beta&t=GuWT57th1j1ccKR_tqjeVK97CxiiwodhEs6pcImhjPM" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <img src="https://media.licdn.com/dms/image/C4D0BAQGcs8aDa4BZOQ/company-logo_200_200/0/1668186440015?e=2147483647&v=beta&t=GuWT57th1j1ccKR_tqjeVK97CxiiwodhEs6pcImhjPM" width="100px;" alt="lab365"/><br>
         <sub>
           <b>LAB365</b>
         </sub>
@@ -60,7 +60,7 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
     <td align="center">
       <a href="#">
-        <img src="https://media.licdn.com/dms/image/C560BAQHQCNM4L9rUiA/company-logo_200_200/0/1519903716220?e=2147483647&v=beta&t=EdrLHhH197xjDsWP_ZEsiPZqKJpmChheZO62wvSCayA" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <img src="https://media.licdn.com/dms/image/C560BAQHQCNM4L9rUiA/company-logo_200_200/0/1519903716220?e=2147483647&v=beta&t=EdrLHhH197xjDsWP_ZEsiPZqKJpmChheZO62wvSCayA" width="100px;" alt="audaces"/><br>
         <sub>
           <b>Audaces</b>
         </sub>

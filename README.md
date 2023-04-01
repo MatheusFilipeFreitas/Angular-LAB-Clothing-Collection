@@ -1,27 +1,73 @@
-# LABClothingCollection
+# LAB Clothing Collection
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
+<img src="exemplo-image.png" alt="exemplo imagem">
 
-## Development server
+> Projeto DEVinHouse Audaces Módulo 1, aplicação em Angular e JSON Server. CRUD básico de Coleções e Modelos.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## 💻 Pré-requisitos
 
-## Code scaffolding
+Antes de começar, verifique se você atendeu aos seguintes requisitos:
+* Você instalou a versão mais recente do Node, Angular e JSON Server.
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## 🚀 Instalando LAB Clothing Collection
 
-## Build
+Para instalar o LAB Clothing Collection, siga estas etapas:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+* Vá até o diretório do json server dentro do projeto: 'caminho_para_o_projeto'/LAB-Clothing-Collection-master/database e digite o comando abaixo
+```
+$ npx json-server --watch db.json
+```
+* Vá até o diretório raiz do projeto: 'caminho_para_o_projeto'/LAB-Clothing-Collection-master e digite o comando abaixo
+```
+$ npm install
+```
+* O comando acima irá baixar as dependências do projeto
+```
+$ npm start
+```
+* O projeto irá começar a compilar, deixe o terminal aberto e vá para a seguinte URL: http://localhost:4200
 
-## Running unit tests
+## 📫 Contribuindo para <nome_do_projeto>
+<!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
+Para contribuir com <nome_do_projeto>, siga estas etapas:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Bifurque este repositório.
+2. Crie um branch: `git checkout -b <nome_branch>`.
+3. Faça suas alterações e confirme-as: `git commit -m '<mensagem_commit>'`
+4. Envie para o branch original: `git push origin <nome_do_projeto> / <local>`
+5. Crie a solicitação de pull.
 
-## Running end-to-end tests
+## 🤝 Colaboradores
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Agradecemos às seguintes pessoas que contribuíram para este projeto:
 
-## Further help
+<table>
+  <tr>
+    <td align="center">
+      <a href="#">
+        <img src="https://avatars.githubusercontent.com/u/49175829?v=4" width="100px;" alt="Foto do Iuri Silva no GitHub"/><br>
+        <sub>
+          <b>Matheus Freitas</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://media.licdn.com/dms/image/C4D0BAQGcs8aDa4BZOQ/company-logo_200_200/0/1668186440015?e=2147483647&v=beta&t=GuWT57th1j1ccKR_tqjeVK97CxiiwodhEs6pcImhjPM" width="100px;" alt="Foto do Mark Zuckerberg"/><br>
+        <sub>
+          <b>LAB365</b>
+        </sub>
+      </a>
+    </td>
+    <td align="center">
+      <a href="#">
+        <img src="https://media.licdn.com/dms/image/C560BAQHQCNM4L9rUiA/company-logo_200_200/0/1519903716220?e=2147483647&v=beta&t=EdrLHhH197xjDsWP_ZEsiPZqKJpmChheZO62wvSCayA" width="100px;" alt="Foto do Steve Jobs"/><br>
+        <sub>
+          <b>Audaces</b>
+        </sub>
+      </a>
+    </td>
+  </tr>
+</table>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+[⬆ Voltar ao topo](#LAB-Clothing-Collection)<br>

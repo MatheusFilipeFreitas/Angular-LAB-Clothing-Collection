@@ -23,6 +23,7 @@ import { CreateModelComponent } from './pages/model/create-model/create-model.co
 import { EditModelComponent } from './pages/model/edit-model/edit-model.component';
 import { NumberAbbreviationPipe } from './common/pipe/number-abbreviation.pipe';
 import { BuildingComponent } from './pages/building/building.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { BuildingComponent } from './pages/building/building.component';
     CreateModelComponent,
     EditModelComponent,
     NumberAbbreviationPipe,
-    BuildingComponent
+    BuildingComponent,
+    NotFoundComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
   providers: [AuthGuard],

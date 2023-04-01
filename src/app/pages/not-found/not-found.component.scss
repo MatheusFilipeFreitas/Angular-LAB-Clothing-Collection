@@ -1,0 +1,22 @@
+@import '../../app.component.scss';
+
+.container {
+  min-width: 100vw;
+  min-height: 100vh;
+  background-color: $layout-full-main-wrapper-background-color;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.container .wrapper p {
+  font-size: 19px;
+  letter-spacing: 1px;
+}

@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { NgxSkeletonLoaderModule } from 'ngx-skeleton-loader';
 
 import { AppComponent } from './app.component';
 import { WrapperComponent } from './layouts/wrapper/wrapper.component';
@@ -47,7 +48,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     BuildingComponent,
     NotFoundComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule, NgxSkeletonLoaderModule],
   providers: [AuthGuard],
   bootstrap: [AppComponent],
 })

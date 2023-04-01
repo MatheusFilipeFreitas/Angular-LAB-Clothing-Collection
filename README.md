@@ -13,11 +13,11 @@ Antes de começar, verifique se você atendeu aos seguintes requisitos:
 
 Para instalar o LAB Clothing Collection, siga estas etapas:
 
-* Vá até o diretório do json server dentro do projeto: 'caminho_para_o_projeto'/LAB-Clothing-Collection-master/database e digite o comando abaixo
+* Vá até o diretório do json server dentro do projeto: '<caminho_para_o_projeto>'/LAB-Clothing-Collection-master/database e digite o comando abaixo
 ```
 $ npx json-server --watch db.json
 ```
-* Vá até o diretório raiz do projeto: 'caminho_para_o_projeto'/LAB-Clothing-Collection-master e digite o comando abaixo
+* Vá até o diretório raiz do projeto: '<caminho_para_o_projeto>'/LAB-Clothing-Collection-master e digite o comando abaixo
 ```
 $ npm install
 ```
@@ -28,7 +28,6 @@ $ npm start
 * O projeto irá começar a compilar, deixe o terminal aberto e vá para a seguinte URL: http://localhost:4200
 
 ## 📫 Contribuindo para <nome_do_projeto>
-<!---Se o seu README for longo ou se você tiver algum processo ou etapas específicas que deseja que os contribuidores sigam, considere a criação de um arquivo CONTRIBUTING.md separado--->
 Para contribuir com <nome_do_projeto>, siga estas etapas:
 
 1. Bifurque este repositório.
@@ -69,5 +68,3 @@ Agradecemos às seguintes pessoas que contribuíram para este projeto:
     </td>
   </tr>
 </table>
-
-[⬆ Voltar ao topo](#LAB-Clothing-Collection)<br>

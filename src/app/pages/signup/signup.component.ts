@@ -80,7 +80,7 @@ export class SignupComponent implements OnInit {
   }
 
   samePasswordInInputs(): Boolean {
-    if (this.confirmPassword === this.password) {
+    if (this.confirmPassword?.value === this.password?.value) {
       return true;
     }
     return false;

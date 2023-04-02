@@ -40,17 +40,17 @@ export class EditModelComponent implements OnInit {
     this.createForm();
   }
 
-  getCollections() {
+  getCollections(): void {
     try {
       this.collectionService.getAllCollections().subscribe((collections) => {
         this.collections = collections;
       });
-    }catch(error) {
-      this.resultErrorMessageColletion();
+    } catch (error) {
+      this.collectionsGetErrorAlert();
     }
   }
 
-  getModelById() {
+  getModelById(): void {
     try {
       this.modelService.getModel(this.currentId).subscribe((model) => {
         this.model = model;
@@ -59,34 +59,34 @@ export class EditModelComponent implements OnInit {
           accountable: model.accountable,
           type: model.type,
           collection: model.collection,
-          embroidery: (model.embroidery)? 'yes' : 'no',
-          stamped: (model.stamped)? 'yes' : 'no',
+          embroidery: (model.embroidery) ? 'yes' : 'no',
+          stamped: (model.stamped) ? 'yes' : 'no',
         })
       })
-    }catch(error) {
-      this.resultErrorMessageGetModel()
+    } catch (error) {
+      this.modelGetErrorAlert()
     }
   }
 
-  updateModel() {
+  updateModel(): void {
     const model = this.createObjectModel();
     try {
       this.modelService.updateModel(this.currentId, model).subscribe({
-        next: (v) => this.resultMessageModel(v),
+        next: (v) => this.modelSuccessAlert(v),
       });
-    }catch(error) {
-      this.resultErrorMessageModel();
+    } catch (error) {
+      this.modelUpdateErrorAlert();
     }
   }
 
-  deleteModel() {
+  deleteModel(): void {
     try {
       this.modelService.deleteModel(this.currentId).subscribe({
-        next: () => this.resultMessageDeleteModel(),
+        next: () => this.modelErrorAlert(),
         complete: () => this.router.navigate(['/models'])
       });
-    }catch(error) {
-      this.resultErrorMessageDeleteModel();
+    } catch (error) {
+      this.modelDeleteErrorAlert();
     }
   }
 
@@ -101,14 +101,14 @@ export class EditModelComponent implements OnInit {
     }
   }
 
-  createForm() {
+  createForm(): void {
     this.modelEditForm = new FormGroup({
-      name: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      accountable: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      type: new FormControl('',[Validators.required]),
-      collection: new FormControl('',[Validators.required]),
-      embroidery: new FormControl(null,[Validators.required]),
-      stamped: new FormControl(null,[Validators.required]),
+      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      accountable: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      type: new FormControl('', [Validators.required]),
+      collection: new FormControl('', [Validators.required]),
+      embroidery: new FormControl(null, [Validators.required]),
+      stamped: new FormControl(null, [Validators.required]),
     });
   }
 
@@ -137,31 +137,31 @@ export class EditModelComponent implements OnInit {
   }
 
 
-  onSubmit() {
-    if(this.modelEditForm.valid && (this.modelEditForm.value.collection != '' && this.modelEditForm.value.type != '')) {
+  onSubmit(): void {
+    if (this.modelEditForm.valid && (this.modelEditForm.value.collection != '' && this.modelEditForm.value.type != '')) {
       this.updateModel();
-    }else{
-      this.resultBlankInputsCollection();
+    } else {
+      this.inputsBlankAlert();
     }
   }
 
-  cancel() {
+  cancel(): void {
     this.router.navigate(['/models']);
   }
 
-  delete() {
+  delete(): void {
     this.deleteModel();
   }
 
-  resultMessageModel(result: any) {
-    if(result.name) {
+  modelSuccessAlert(result: any) {
+    if (result.name) {
       this.alertMessage = {
         title: '',
         message: 'Modelo atualizado com sucesso!',
         typeAlert: SUCCESS,
       }
       this.alertService.showGenericAlert(this.alertMessage);
-    }else {
+    } else {
       this.alertMessage = {
         title: 'Ocorreu um erro ao atualizar o Modelo',
         message: 'Entrar em contato com o administrador do sistema.',
@@ -170,7 +170,7 @@ export class EditModelComponent implements OnInit {
     }
   }
 
-  resultMessageDeleteModel() {
+  modelErrorAlert() {
     this.alertMessage = {
       title: '',
       message: 'Modelo deletado com sucesso!',
@@ -180,7 +180,7 @@ export class EditModelComponent implements OnInit {
   }
 
 
-  resultErrorMessageGetModel(): void {
+  modelGetErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar o Modelo',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -189,17 +189,16 @@ export class EditModelComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageModel(): void {
+  modelUpdateErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao atualizar o Modelo',
       message: 'Entrar em contato com o administrador do sistema.',
       typeAlert: ERROR,
     };
     this.alertService.showGenericAlert(this.alertMessage);
-
   }
 
-  resultErrorMessageDeleteModel() {
+  modelDeleteErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao deletar o Modelo',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -208,7 +207,7 @@ export class EditModelComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageColletion(): void {
+  collectionsGetErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar as Coleções',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -217,7 +216,7 @@ export class EditModelComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultBlankInputsCollection() {
+  inputsBlankAlert() {
     this.alertMessage = {
       title: '',
       message: 'Preencha os campos',

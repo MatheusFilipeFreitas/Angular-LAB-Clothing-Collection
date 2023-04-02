@@ -32,14 +32,14 @@ export class CreateCollectionComponent implements OnInit {
     this.createForm();
   }
 
-  createForm() {
+  createForm(): void {
     this.collectionCreateForm = new FormGroup({
-      name: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      accountable: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      season: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      brand: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      budget: new FormControl(null,[Validators.required, Validators.min(0)]),
-      release: new FormControl(null,[Validators.required, Validators.min(new Date().getFullYear()), Validators.minLength(4)]),
+      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      accountable: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      season: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      brand: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      budget: new FormControl(null, [Validators.required, Validators.min(0)]),
+      release: new FormControl(null, [Validators.required, Validators.min(new Date().getFullYear()), Validators.minLength(4)]),
     });
   }
 
@@ -72,11 +72,11 @@ export class CreateCollectionComponent implements OnInit {
 
     try {
       this.collectionService.createCollection(collection).subscribe({
-        next: (r) => this.resultMessageCollection(r),
-        error: (e) => this.resultErrorMessageCollection(),
+        next: (r) => this.collectionSuccessAlert(r),
+        error: (e) => this.collectionErrorAlert(),
       })
-    }catch(error) {
-      this.resultErrorMessageCollection();
+    } catch (error) {
+      this.collectionErrorAlert();
       return false;
     }
     this.collectionCreateForm.reset();
@@ -94,27 +94,27 @@ export class CreateCollectionComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    if(this.collectionCreateForm.valid) {
+  onSubmit(): void {
+    if (this.collectionCreateForm.valid) {
       this.createCollection();
-    }else{
-      this.resultBlankInputsCollection();
+    } else {
+      this.blankInputsErrorAlert();
     }
   }
 
-  cancel() {
+  cancel(): void {
     this.router.navigate(['/collections']);
   }
 
-  resultMessageCollection(result: any) {
-    if(result.name) {
+  collectionSuccessAlert(result: any): void {
+    if (result.name) {
       this.alertMessage = {
         title: '',
         message: 'Coleção cadastrada com sucesso!',
         typeAlert: SUCCESS,
       }
       this.alertService.showGenericAlert(this.alertMessage);
-    }else {
+    } else {
       this.alertMessage = {
         title: 'Ocorreu um erro ao cadastrar uma Coleção',
         message: 'Entrar em contato com o administrador do sistema.',
@@ -123,7 +123,7 @@ export class CreateCollectionComponent implements OnInit {
     }
   }
 
-  resultErrorMessageCollection() {
+  collectionErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao cadastrar uma Coleção',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -132,7 +132,7 @@ export class CreateCollectionComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultBlankInputsCollection() {
+  blankInputsErrorAlert(): void {
     this.alertMessage = {
       title: '',
       message: 'Preencha os campos',

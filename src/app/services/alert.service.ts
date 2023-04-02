@@ -14,19 +14,6 @@ export class AlertService {
     Swal.fire(title, message, icon);
   }
 
-  public displayDialog(alert: IAlert) {
-    Swal.fire({
-      title: alert.title,
-      text: alert.message,
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#d33',
-      cancelButtonColor: '#3085d6',
-      confirmButtonText: 'Deletar'
-    });
-  }
-
-
   public showGenericAlert(alert: IAlert) {
     this.displayAlert(alert.title!, alert.message, alert.typeAlert!);
   }
@@ -50,6 +37,5 @@ export class AlertService {
   public displayQuestion(alert: IAlert) {
     this.displayAlert(alert.title!, alert.message, QUESTION);
   }
-
 
 }

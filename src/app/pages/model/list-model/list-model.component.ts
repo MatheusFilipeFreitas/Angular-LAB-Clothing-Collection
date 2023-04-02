@@ -23,27 +23,27 @@ export class ListModelComponent {
     this.getListOfCollections();
   }
 
-  getListOfModels() {
+  getListOfModels(): void {
     this.modelService.getAllModels().subscribe((models) => {
       this.models = models;
     });
   }
 
-  getListOfCollections() {
+  getListOfCollections(): void {
     this.collectionService.getAllCollections().subscribe((colletions) => {
       this.collections = colletions;
     })
   }
 
-  getCollectionName(id: number) {
+  getCollectionName(id: number): string | undefined {
     return this.collections.find((collection) => collection.id === id)?.name;
   }
 
-  redirectToCreateModel() {
+  redirectToCreateModel(): void {
     this.router.navigate(['/models/create'])
   }
 
-  redirectToUpdate(id?: number) {
-    this.router.navigate(['/models/update/'+ id]);
+  redirectToUpdate(id?: number): void {
+    this.router.navigate(['/models/update/' + id]);
   }
 }

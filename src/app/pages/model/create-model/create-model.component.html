@@ -4,13 +4,17 @@
     <div class="row">
       <div class="col-sm">
         <div class="form-floating">
-          <input [class]="name!.errors?.['required'] && name!.touched || name!.errors?.['minlength'] ? 'is-invalid' : ''" formControlName="name" type="text" class="form-control" id="floatingName" placeholder="Nome">
+          <input
+            [class]="name!.errors?.['required'] && name!.touched || name!.errors?.['minlength'] ? 'is-invalid' : ''"
+            formControlName="name" type="text" class="form-control" id="floatingName" placeholder="Nome">
           <label for="floatingInput">Nome da Modelo</label>
         </div>
       </div>
       <div class="col-sm">
         <div class="form-floating">
-          <select [class]="type!.errors?.['required'] && type!.touched || type!.errors?.['minlength'] ? 'is-invalid' : ''" formControlName="type" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+          <select
+            [class]="type!.errors?.['required'] && type!.touched || type!.errors?.['minlength'] ? 'is-invalid' : ''"
+            formControlName="type" class="form-select" id="floatingSelect" aria-label="Floating label select example">
             <option selected value="">-</option>
             <option *ngFor="let type of listOfModelTypes" [ngValue]="type">{{ type }}</option>
           </select>
@@ -21,16 +25,22 @@
     <div class="row">
       <div class="col-sm">
         <div class="form-floating">
-          <select [class]="collection!.errors?.['required'] && collection!.touched || collection!.errors?.['minlength'] ? 'is-invalid' : ''" formControlName="collection" class="form-select" id="floatingSelect" aria-label="Floating label select example">
+          <select
+            [class]="collection!.errors?.['required'] && collection!.touched || collection!.errors?.['minlength'] ? 'is-invalid' : ''"
+            formControlName="collection" class="form-select" id="floatingSelect"
+            aria-label="Floating label select example">
             <option selected value="">-</option>
-            <option *ngFor="let collection of collections; index as i" [ngValue]="collection.id">{{ collection.name }}</option>
+            <option *ngFor="let collection of collections; index as i" [ngValue]="collection.id">{{ collection.name }}
+            </option>
           </select>
           <label for="floatingSelect">Selecionar Coleção</label>
         </div>
       </div>
       <div class="col-sm">
         <div class="form-floating">
-          <input [class]="accountable!.errors?.['required'] && accountable!.touched || accountable!.errors?.['minlength'] ? 'is-invalid' : ''" formControlName="accountable" type="text" class="form-control" id="floatingAccountable" placeholder="Nome">
+          <input
+            [class]="accountable!.errors?.['required'] && accountable!.touched || accountable!.errors?.['minlength'] ? 'is-invalid' : ''"
+            formControlName="accountable" type="text" class="form-control" id="floatingAccountable" placeholder="Nome">
           <label for="floatingInput">Responsável pelo Modelo</label>
         </div>
       </div>
@@ -40,13 +50,15 @@
         <p class="check-caption">Possui bordado?</p>
         <div class="form-check-area">
           <div class="form-check">
-            <input formControlName="embroidery" value="yes" class="form-check-input" type="radio" name="embroidery" id="flexRadioDefault1">
+            <input formControlName="embroidery" value="yes" class="form-check-input" type="radio" name="embroidery"
+              id="flexRadioDefault1">
             <label class="form-check-label" for="flexRadioDefault1">
               Sim
             </label>
           </div>
           <div class="form-check">
-            <input formControlName="embroidery" value="no" class="form-check-input" type="radio" name="embroidery" id="flexRadioDefault2">
+            <input formControlName="embroidery" value="no" class="form-check-input" type="radio" name="embroidery"
+              id="flexRadioDefault2">
             <label class="form-check-label" for="flexRadioDefault1">
               Não
             </label>
@@ -57,13 +69,15 @@
         <p class="check-caption">Possui estampa?</p>
         <div class="form-check-area">
           <div class="form-check">
-            <input formControlName="stamped" value="yes" class="form-check-input" type="radio" name="stamped" id="flexRadioDefault3">
+            <input formControlName="stamped" value="yes" class="form-check-input" type="radio" name="stamped"
+              id="flexRadioDefault3">
             <label class="form-check-label" for="flexRadioDefault2">
               Sim
             </label>
           </div>
           <div class="form-check">
-            <input formControlName="stamped" value="no" class="form-check-input" type="radio" name="stamped" id="flexRadioDefault4">
+            <input formControlName="stamped" value="no" class="form-check-input" type="radio" name="stamped"
+              id="flexRadioDefault4">
             <label class="form-check-label" for="flexRadioDefault2">
               Não
             </label>

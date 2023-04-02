@@ -26,7 +26,7 @@ export class EditCollectionComponent implements OnInit {
     release: ''
   }
 
-  constructor(private activeRoute: ActivatedRoute ,private router: Router, private collectionService: CollectionService, private alertService: AlertService) {
+  constructor(private activeRoute: ActivatedRoute, private router: Router, private collectionService: CollectionService, private alertService: AlertService) {
 
   }
 
@@ -35,7 +35,7 @@ export class EditCollectionComponent implements OnInit {
     this.createForm();
   }
 
-  getCollection() {
+  getCollection(): void {
     try {
       this.collectionService.getCollection(this.currentId).subscribe((collection) => {
         this.collection = collection;
@@ -49,41 +49,41 @@ export class EditCollectionComponent implements OnInit {
         });
       })
 
-    }catch(error) {
-      this.resultErrorMessageGetCollection();
+    } catch (error) {
+      this.collectionGetErrorAlert();
     }
   }
 
-  updateCollection() {
+  updateCollection(): void {
     const collection = this.createCollectionObject();
     try {
       this.collectionService.updateCollection(this.currentId, collection).subscribe({
-        next: (v) => this.resultMessageCollection(v),
+        next: (v) => this.collectionSuccessAlert(v),
       });
-    }catch(error) {
-      this.resultErrorMessageCollection();
+    } catch (error) {
+      this.collectionErrorAlert();
     }
   }
 
-  createForm() {
+  createForm(): void {
     this.collectionEditForm = new FormGroup({
-      name: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      accountable: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      season: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      brand: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      budget: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      release: new FormControl(null,[Validators.required, Validators.minLength(3)]),
+      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      accountable: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      season: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      brand: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      budget: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      release: new FormControl(null, [Validators.required, Validators.minLength(3)]),
     });
   }
 
-  deleteCollection() {
+  deleteCollection(): void {
     try {
       this.collectionService.deleteCollection(this.currentId).subscribe({
-        next: () => this.resultMessageDeleteCollection(),
+        next: () => this.collectionSuccessfullyDeletedAlert(),
         complete: () => this.router.navigate(['/collections'])
       });
-    }catch(error) {
-      this.resultErrorMessageDeleteCollection();
+    } catch (error) {
+      this.collectionDeleteErrorAlert();
     }
   }
 
@@ -123,31 +123,31 @@ export class EditCollectionComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    if(this.collectionEditForm.valid){
+  onSubmit(): void {
+    if (this.collectionEditForm.valid) {
       this.updateCollection();
-    }else{
-      this.inputBlankErrorMessage();
+    } else {
+      this.inputsBlankErrorAlert();
     }
   }
 
-  cancel() {
+  cancel(): void {
     this.router.navigate(['/collections']);
   }
 
-  delete() {
+  delete(): void {
     this.deleteCollection();
   }
 
-  resultMessageCollection(result: any) {
-    if(result.name) {
+  collectionSuccessAlert(result: any): void {
+    if (result.name) {
       this.alertMessage = {
         title: '',
         message: 'Coleção atualizada com sucesso!',
         typeAlert: SUCCESS,
       }
       this.alertService.showGenericAlert(this.alertMessage);
-    }else {
+    } else {
       this.alertMessage = {
         title: 'Ocorreu um erro ao atualizar a Coleção',
         message: 'Entrar em contato com o administrador do sistema.',
@@ -156,7 +156,7 @@ export class EditCollectionComponent implements OnInit {
     }
   }
 
-  resultMessageDeleteCollection() {
+  collectionSuccessfullyDeletedAlert(): void {
     this.alertMessage = {
       title: '',
       message: 'Coleção deletada com sucesso!',
@@ -165,7 +165,7 @@ export class EditCollectionComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageCollection() {
+  collectionErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao atualizar a Coleção',
       message: 'Entrar em contato com o administrador do sistema. 222',
@@ -174,7 +174,7 @@ export class EditCollectionComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageGetCollection() {
+  collectionGetErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar a Coleção',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -183,7 +183,7 @@ export class EditCollectionComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageDeleteCollection() {
+  collectionDeleteErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao deletar a Coleção',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -192,7 +192,7 @@ export class EditCollectionComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  inputBlankErrorMessage() {
+  inputsBlankErrorAlert(): void {
     this.alertMessage = {
       title: '',
       message: 'Preencha os campos',

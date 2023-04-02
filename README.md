@@ -15,15 +15,15 @@ Para instalar o LAB Clothing Collection, siga estas etapas:
 
 * Vá até o diretório do json server dentro do projeto: '<caminho_para_o_projeto>'/LAB-Clothing-Collection-master/database e digite o comando abaixo
 ```
-$ npx json-server --watch db.json
+npx json-server --watch db.json
 ```
 * Vá até o diretório raiz do projeto: '<caminho_para_o_projeto>'/LAB-Clothing-Collection-master e digite o comando abaixo
 ```
-$ npm install
+npm install
 ```
 * O comando acima irá baixar as dependências do projeto
 ```
-$ npm start
+npm start
 ```
 * O projeto irá começar a compilar, deixe o terminal aberto e vá para a seguinte URL: http://localhost:4200
 

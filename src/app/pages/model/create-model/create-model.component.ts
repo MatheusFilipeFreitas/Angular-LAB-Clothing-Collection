@@ -38,14 +38,14 @@ export class CreateModelComponent implements OnInit {
     this.createForm();
   }
 
-  createForm() {
+  createForm(): void {
     this.modelCreateForm = new FormGroup({
-      name: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      accountable: new FormControl(null,[Validators.required, Validators.minLength(3)]),
-      type: new FormControl('',[Validators.required]),
-      collection: new FormControl('',[Validators.required]),
-      embroidery: new FormControl(null,[Validators.required]),
-      stamped: new FormControl(null,[Validators.required]),
+      name: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      accountable: new FormControl(null, [Validators.required, Validators.minLength(3)]),
+      type: new FormControl('', [Validators.required]),
+      collection: new FormControl('', [Validators.required]),
+      embroidery: new FormControl(null, [Validators.required]),
+      stamped: new FormControl(null, [Validators.required]),
     });
   }
 
@@ -78,24 +78,24 @@ export class CreateModelComponent implements OnInit {
 
     try {
       this.modelService.createModel(model).subscribe({
-        next: (r) => this.resultMessageModel(r),
-        error: (e) => this.resultErrorCreateModel()
+        next: (r) => this.modelSuccessAlert(r),
+        error: (e) => this.modelErrorAlert()
       })
-    }catch(error) {
-      this.resultErrorCreateModel();
+    } catch (error) {
+      this.modelErrorAlert();
       return false;
     }
     this.modelCreateForm.reset();
     return true;
   }
 
-  getCollections() {
+  getCollections(): void {
     try {
       this.collectionService.getAllCollections().subscribe((collections) => {
         this.collections = collections;
       });
-    }catch(error) {
-      this.resultErrorMessageColletion();
+    } catch (error) {
+      this.collectionErrorAlert();
     }
   }
 
@@ -110,27 +110,27 @@ export class CreateModelComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    if(this.modelCreateForm.valid && (this.modelCreateForm.value.collection != '' && this.modelCreateForm.value.type != '')) {
+  onSubmit(): void {
+    if (this.modelCreateForm.valid && (this.modelCreateForm.value.collection != '' && this.modelCreateForm.value.type != '')) {
       this.createModel();
-    }else{
-      this.resultBlankInputsCollection();
+    } else {
+      this.inputsBlankAlert();
     }
   }
 
-  cancel() {
+  cancel(): void {
     this.router.navigate(['/models']);
   }
 
-  resultMessageModel(result: any) {
-    if(result.name) {
+  modelSuccessAlert(result: any): void {
+    if (result.name) {
       this.alertMessage = {
         title: '',
         message: 'Modelo cadastrado com sucesso!',
         typeAlert: SUCCESS,
       }
       this.alertService.showGenericAlert(this.alertMessage);
-    }else {
+    } else {
       this.alertMessage = {
         title: 'Ocorreu um erro ao cadastrar um Modelo',
         message: 'Entrar em contato com o administrador do sistema.',
@@ -139,7 +139,7 @@ export class CreateModelComponent implements OnInit {
     }
   }
 
-  resultErrorCreateModel(): void {
+  modelErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao cadastrar o Modelo',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -148,7 +148,7 @@ export class CreateModelComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageColletion(): void {
+  collectionErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar as Coleções',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -157,7 +157,7 @@ export class CreateModelComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultBlankInputsCollection() {
+  inputsBlankAlert() {
     this.alertMessage = {
       title: '',
       message: 'Preencha os campos',

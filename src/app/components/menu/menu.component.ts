@@ -12,7 +12,7 @@ export class MenuComponent {
 
   }
 
-  redirectToDashboard() {
+  redirectToDashboard(): void {
     this.router.navigate(['/dashboard']);
   }
 }

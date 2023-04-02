@@ -1,28 +1,31 @@
 <div class="container">
-    <img src="assets/images/logo.png" alt="">
-    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-      <h2>Sign In</h2>
-      <h4>Insira suas credenciais para acessar sua conta</h4>
-      <div class="input-group has-validation">
-        <div class="form-floating is-invalid">
-          <input [class]="email!.errors?.['required'] && email!.touched ? 'is-invalid' : ''" formControlName="email" type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-          <label for="floatingInput">Informe seu email</label>
-        </div>
-        <div *ngIf="email!.errors?.['required'] && email!.touched" class="invalid-feedback">
-          Informe um email.
-        </div>
+  <img src="assets/images/logo.png" alt="">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <h2>Sign In</h2>
+    <h4>Insira suas credenciais para acessar sua conta</h4>
+    <div class="input-group has-validation">
+      <div class="form-floating is-invalid">
+        <input [class]="email!.errors?.['required'] && email!.touched ? 'is-invalid' : ''" formControlName="email"
+          type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+        <label for="floatingInput">Informe seu email</label>
       </div>
-      <div class="input-group has-validation">
-        <div class="form-floating is-invalid">
-          <input [class]="password!.errors?.['required'] && password!.touched ? 'is-invalid' : ''" formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
-          <label for="floatingPassword">Informe sua senha</label>
-        </div>
-        <div *ngIf="password!.errors?.['required'] && password!.touched || password!.errors?.['minlength']" class="invalid-feedback">
-          Informe uma senha.
-        </div>
+      <div *ngIf="email!.errors?.['required'] && email!.touched" class="invalid-feedback">
+        Informe um email.
       </div>
-      <button type="submit" class="btn btn-primary">Entrar</button>
-    </form>
-    <p>Esqueceu sua senha? <a [routerLink]="['/password-recovery']">Redefinir senha</a> </p>
-    <p>Ainda não tem uma conta? <a [routerLink]="['/signup']">Cadastre-se</a> </p>
-  </div>
+    </div>
+    <div class="input-group has-validation">
+      <div class="form-floating is-invalid">
+        <input [class]="password!.errors?.['required'] && password!.touched ? 'is-invalid' : ''"
+          formControlName="password" type="password" class="form-control" id="floatingPassword" placeholder="Password">
+        <label for="floatingPassword">Informe sua senha</label>
+      </div>
+      <div *ngIf="password!.errors?.['required'] && password!.touched || password!.errors?.['minlength']"
+        class="invalid-feedback">
+        Informe uma senha.
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Entrar</button>
+  </form>
+  <p>Esqueceu sua senha? <a [routerLink]="['/password-recovery']">Redefinir senha</a> </p>
+  <p>Ainda não tem uma conta? <a [routerLink]="['/signup']">Cadastre-se</a> </p>
+</div>

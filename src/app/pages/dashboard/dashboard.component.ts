@@ -30,46 +30,47 @@ export class DashboardComponent implements OnInit {
     this.getCollections();
   }
 
-  getCollections() {
-    try{
+  getCollections(): void {
+    try {
       this.collectionService.getAllCollectionsSorted().subscribe((collections) => {
         this.collections = collections!;
         this.collectionQuantity = collections.length;
         this.totalBudget = this.getTotalBudget(collections);
         this.getModels();
       });
-    }catch(error) {
-      this.resultErrorMessageModels();
+    } catch (error) {
+      this.collectionsErrorAlert();
     }
   }
 
-  getModels() {
-    try{
+  getModels(): void {
+    try {
       this.modelService.getAllModels().subscribe((models) => {
         this.models = models;
         this.modelQuantity = models.length;
         this.collectionWithModelQuantity = this.getModelQuantityByCollection();
       });
-    }catch(error) {
-      this.resultErrorMessageModels();
+    } catch (error) {
+      this.modelsErrorAlert();
     }
   }
 
-  getModelQuantityByCollection() {
+  getModelQuantityByCollection(): any[] {
     return this.collections.map(collection => ({
       ...collection,
       modelsQuantity: this.models.filter(model => model.collection === collection.id).length
     }));
   }
+
   getTotalBudget(collections: ICollection[]): number {
     let sum = 0;
-    for(let collection of collections) {
+    for (let collection of collections) {
       sum += collection.budget;
     }
-    return sum/collections.length;
+    return sum / collections.length;
   }
 
-  resultErrorMessageCollections(): void {
+  collectionsErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar as Coleçõess',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -78,7 +79,7 @@ export class DashboardComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageModels(): void {
+  modelsErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar os Modelos',
       message: 'Entrar em contato com o administrador do sistema.',

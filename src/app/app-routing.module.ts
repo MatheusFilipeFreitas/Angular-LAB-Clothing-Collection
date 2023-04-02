@@ -81,7 +81,7 @@ const routes: Routes = [
         children: [
           {
             path: '',
-            component:  ListModelComponent
+            component: ListModelComponent
           },
           {
             path: 'create',

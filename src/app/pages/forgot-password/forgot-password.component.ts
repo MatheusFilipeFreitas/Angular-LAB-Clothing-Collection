@@ -10,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./forgot-password.component.scss']
 })
 
-export class ForgotPasswordComponent implements OnInit{
+export class ForgotPasswordComponent implements OnInit {
 
   passwordRecoveryForm!: FormGroup;
   userList!: IUser[];
   userFound!: IUser;
 
-  constructor(private router: Router,private userService: UserService) {
+  constructor(private router: Router, private userService: UserService) {
 
   }
 
@@ -25,13 +25,13 @@ export class ForgotPasswordComponent implements OnInit{
     this.createForm();
   }
 
-  getUsersList() {
+  getUsersList(): void {
     this.userService.getAllUsers().subscribe((users) => {
       this.userList = users;
     });
   }
 
-  createForm() {
+  createForm(): void {
     this.passwordRecoveryForm = new FormGroup({
       email: new FormControl('', [Validators.required, Validators.email, Validators.minLength(8)])
     });
@@ -45,20 +45,20 @@ export class ForgotPasswordComponent implements OnInit{
     this.userFound = this.userList.find((user) => {
       return user.email == this.email?.value;
     })!;
-    if(this.userFound == undefined) {
+    if (this.userFound == undefined) {
       return false;
     }
     return true;
   }
 
-  onSubmit() {
+  onSubmit(): void {
     const result = this.findEmailInUserList();
-    if(!result) {
+    if (!result) {
 
     }
   }
 
-  redirectToLogin() {
+  redirectToLogin(): void {
     this.router.navigate(['/login']);
   }
 

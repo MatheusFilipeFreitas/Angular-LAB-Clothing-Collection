@@ -28,54 +28,53 @@ export class ListCollectionComponent implements OnInit {
     this.getCollections();
   }
 
-  getCollections() {
-    try{
+  getCollections(): void {
+    try {
       this.collectionService.getAllCollections().subscribe((collections) => {
         this.collections = collections!;
         this.getModels();
       });
-    }catch(error) {
-      this.resultErrorMessageModels();
+    } catch (error) {
+      this.collectionsErrorAlert();
     }
   }
 
-  getModels() {
-    try{
+  getModels(): void {
+    try {
       this.modelService.getAllModels().subscribe((models) => {
         this.models = models;
         this.collectionWithModelQuantity = this.getModelQuantityByCollection();
       });
-    }catch(error) {
-      this.resultErrorMessageModels();
+    } catch (error) {
+      this.modelsErrorAlert();
     }
   }
 
-  getModelQuantityByCollection() {
+  getModelQuantityByCollection(): any[] {
     return this.collections.map(collection => ({
       ...collection,
       modelsQuantity: this.models.filter(model => model.collection === collection.id).length
     }));
   }
 
-
-  redirectToCreateCollection() {
+  redirectToCreateCollection(): void {
     this.router.navigate(['/collections/create'])
   }
 
-  redirectToUpdate(id?: number) {
+  redirectToUpdate(id?: number): void {
     this.router.navigate(['/collections/update/' + id]);
   }
 
-  resultErrorMessageCollections(): void {
+  collectionsErrorAlert(): void {
     this.alertMessage = {
-      title: 'Ocorreu um erro ao resgatar as Coleçõess',
+      title: 'Ocorreu um erro ao resgatar as Coleções',
       message: 'Entrar em contato com o administrador do sistema.',
       typeAlert: ERROR,
     };
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  resultErrorMessageModels(): void {
+  modelsErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao resgatar os Modelos',
       message: 'Entrar em contato com o administrador do sistema.',

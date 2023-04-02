@@ -18,11 +18,11 @@ export class HeaderComponent implements OnInit {
     this.getNameFromLocalStorage();
   }
 
-  getNameFromLocalStorage() {
+  getNameFromLocalStorage(): void {
     this.userName = localStorage.getItem('userName')!;
   }
 
-  logout() {
+  logout(): void {
     localStorage.removeItem('userName');
     this.router.navigate(['/login']);
   }

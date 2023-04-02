@@ -52,4 +52,4 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
   providers: [AuthGuard],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule { }

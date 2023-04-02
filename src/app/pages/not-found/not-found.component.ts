@@ -15,13 +15,13 @@ export class NotFoundComponent implements OnInit {
     this.isLogged();
   }
 
-  isLogged() {
+  isLogged(): void {
     const userName = localStorage.getItem('userName');
-    if(userName) {
+    if (userName) {
       setTimeout(() => {
         this.router.navigate(['/dashboard']);
       }, 2000);
-    }else{
+    } else {
       setTimeout(() => {
         this.router.navigate(['/login']);
       }, 2000);

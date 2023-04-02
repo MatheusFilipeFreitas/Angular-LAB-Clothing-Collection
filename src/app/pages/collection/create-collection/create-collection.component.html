@@ -4,13 +4,17 @@
     <div class="row">
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="name" [class]="name!.errors?.['required'] && name!.touched || name!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingName" placeholder="Nome">
+          <input formControlName="name"
+            [class]="name!.errors?.['required'] && name!.touched || name!.errors?.['minlength'] ? 'is-invalid' : ''"
+            type="text" class="form-control" id="floatingName" placeholder="Nome">
           <label for="floatingInput">Nome da Coleção</label>
         </div>
       </div>
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="accountable" [class]="accountable!.errors?.['required'] && accountable!.touched || accountable!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingAccountable" placeholder="Nome">
+          <input formControlName="accountable"
+            [class]="accountable!.errors?.['required'] && accountable!.touched || accountable!.errors?.['minlength'] ? 'is-invalid' : ''"
+            type="text" class="form-control" id="floatingAccountable" placeholder="Nome">
           <label for="floatingInput">Responsável pela Coleção</label>
         </div>
       </div>
@@ -18,13 +22,17 @@
     <div class="row">
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="season" [class]="season!.errors?.['required'] && season!.touched || season!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingSeason" placeholder="Nome">
+          <input formControlName="season"
+            [class]="season!.errors?.['required'] && season!.touched || season!.errors?.['minlength'] ? 'is-invalid' : ''"
+            type="text" class="form-control" id="floatingSeason" placeholder="Nome">
           <label for="floatingInput">Para qual estação?</label>
         </div>
       </div>
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="brand" [class]="brand!.errors?.['required'] && brand!.touched || brand!.errors?.['minlength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingBrand" placeholder="Nome">
+          <input formControlName="brand"
+            [class]="brand!.errors?.['required'] && brand!.touched || brand!.errors?.['minlength'] ? 'is-invalid' : ''"
+            type="text" class="form-control" id="floatingBrand" placeholder="Nome">
           <label for="floatingInput">Para qual marca você está criando?</label>
         </div>
       </div>
@@ -32,13 +40,17 @@
     <div class="row">
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="budget" [class]="budget!.errors?.['required'] && budget!.touched || budget!.errors?.['min'] ? 'is-invalid' : ''" type="number" class="form-control" id="floatingBudget" placeholder="Nome">
+          <input formControlName="budget"
+            [class]="budget!.errors?.['required'] && budget!.touched || budget!.errors?.['min'] ? 'is-invalid' : ''"
+            type="number" class="form-control" id="floatingBudget" placeholder="Nome">
           <label for="floatingInput">Qual é o orçamento desta Coleção?</label>
         </div>
       </div>
       <div class="col-sm">
         <div class="form-floating">
-          <input formControlName="release" [class]="release!.errors?.['required'] && release!.touched || release!.errors?.['min'] || release!.errors?.['minLength'] ? 'is-invalid' : ''" type="text" class="form-control" id="floatingRelease" placeholder="Nome">
+          <input formControlName="release"
+            [class]="release!.errors?.['required'] && release!.touched || release!.errors?.['min'] || release!.errors?.['minLength'] ? 'is-invalid' : ''"
+            type="text" class="form-control" id="floatingRelease" placeholder="Nome">
           <label for="floatingInput">Ano de Lançamento</label>
         </div>
       </div>

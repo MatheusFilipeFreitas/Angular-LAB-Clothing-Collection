@@ -42,8 +42,8 @@ export class LoginComponent implements OnInit {
 
   createLoginForm(): void {
     this.loginForm = new FormGroup({
-      email: new FormControl(null,[Validators.required, Validators.minLength(8), Validators.email]),
-      password: new FormControl(null,[Validators.required, Validators.minLength(8)])
+      email: new FormControl(null, [Validators.required, Validators.minLength(8), Validators.email]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)])
     });
   }
 
@@ -56,16 +56,16 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit(): void {
-    if(this.loginForm.valid) {
-      if(this.findUserByEmailInList()) {
-        if(this.passwordIsCorrect()){
+    if (this.loginForm.valid) {
+      if (this.findUserByEmailInList()) {
+        if (this.passwordIsCorrect()) {
           this.invalidLogin = false;
           this.createLocalStorage(this.user.name);
           this.router.navigate(['/dashboard']);
-        }else{
+        } else {
           this.userAlreadyExistsErrorMessage();
         }
-      }else {
+      } else {
         this.userAlreadyExistsErrorMessage();
       }
 
@@ -73,12 +73,12 @@ export class LoginComponent implements OnInit {
   }
 
   passwordIsCorrect(): Boolean {
-      return this.user.password == this.password?.value;
+    return this.user.password == this.password?.value;
   }
 
   findUserByEmailInList(): Boolean {
     const userFound = this.listOfUsers.find(user => user.email == this.email?.value);
-    if(userFound != undefined) {
+    if (userFound != undefined) {
       this.user = userFound;
       return true;
     }

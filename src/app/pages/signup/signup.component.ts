@@ -18,7 +18,7 @@ export class SignupComponent implements OnInit {
   alertMessage!: IAlert;
   userList!: IUser[];
 
-  constructor(private router: Router ,private userService: UserService, private alertService: AlertService) {
+  constructor(private router: Router, private userService: UserService, private alertService: AlertService) {
 
   }
 
@@ -27,14 +27,14 @@ export class SignupComponent implements OnInit {
     this.createRegisterForm();
   }
 
-  createRegisterForm() {
+  createRegisterForm(): void {
     this.registerForm = new FormGroup({
-      name: new FormControl(null,[Validators.required, Validators.minLength(8)]),
-      enterprise: new FormControl(null,[Validators.required, Validators.minLength(2)]),
-      cnpj: new FormControl(null,[Validators.required, Validators.minLength(14)]),
-      email: new FormControl(null,[Validators.required, Validators.minLength(8)]),
-      password: new FormControl(null,[Validators.required, Validators.minLength(8)]),
-      confirmPassword: new FormControl(null,[Validators.required, Validators.minLength(8)])
+      name: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      enterprise: new FormControl(null, [Validators.required, Validators.minLength(2)]),
+      cnpj: new FormControl(null, [Validators.required, Validators.minLength(14)]),
+      email: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      password: new FormControl(null, [Validators.required, Validators.minLength(8)]),
+      confirmPassword: new FormControl(null, [Validators.required, Validators.minLength(8)])
     });
   }
 
@@ -62,15 +62,13 @@ export class SignupComponent implements OnInit {
     return this.registerForm.get('confirmPassword');
   }
 
-  // Verify user email
-
-  getUsersList() {
+  getUsersList(): void {
     try {
       this.userService.getAllUsers().subscribe((users) => {
         this.userList = users;
       });
-    }catch (error) {
-      this.resultErrorMessageUser();
+    } catch (error) {
+      this.userErrorAlert();
     }
   }
 
@@ -81,38 +79,34 @@ export class SignupComponent implements OnInit {
     return !(found == undefined);
   }
 
-  // Verify if the Password is correct
-
   samePasswordInInputs(): Boolean {
-    if(this.confirmPassword === this.password) {
+    if (this.confirmPassword === this.password) {
       return true;
     }
     return false;
   }
 
-  // Create
-
-  createUser() {
+  createUser(): Boolean {
     const user = this.createObjectUser();
 
-    if(this.userFoundInList(user)) {
-      this.userAlreadyExistsErrorMessage();
+    if (this.userFoundInList(user)) {
+      this.userAlreadyExistsAlert();
       return false;
     }
 
-    if(!this.samePasswordInInputs()) {
-      this.passwordIsNotTheSameErrorMessage();
+    if (!this.samePasswordInInputs()) {
+      this.passwordIsNotTheSameAlert();
       return false;
     }
 
     try {
       this.userService.createUser(user).subscribe({
-        next: (r) => this.resultMessageUser(r),
-        error: (e) => this.resultErrorMessageUser(),
+        next: (r) => this.userSuccessAlert(r),
+        error: (e) => this.userErrorAlert(),
         complete: () => this.router.navigate(['/login']),
       });
-    }catch (error) {
-      this.resultErrorMessageUser();
+    } catch (error) {
+      this.userErrorAlert();
       return false;
     }
     return true;
@@ -128,23 +122,21 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  onSubmit() {
-    if(this.registerForm.valid) {
+  onSubmit(): void {
+    if (this.registerForm.valid) {
       this.createUser();
     }
   }
 
-  // Messages
-
-  resultMessageUser(result: any) {
-    if(result.name) {
+  userSuccessAlert(result: any): void {
+    if (result.name) {
       this.alertMessage = {
         title: '',
         message: 'Usuário cadastrado com sucesso!',
         typeAlert: SUCCESS,
       }
       this.alertService.showGenericAlert(this.alertMessage);
-    }else {
+    } else {
       this.alertMessage = {
         title: 'Ocorreu um erro ao cadastrar o Usuário',
         message: 'Entrar em contato com o administrador do sistema.',
@@ -153,7 +145,7 @@ export class SignupComponent implements OnInit {
     }
   }
 
-  resultErrorMessageUser() {
+  userErrorAlert(): void {
     this.alertMessage = {
       title: 'Ocorreu um erro ao cadastrar o Usuário',
       message: 'Entrar em contato com o administrador do sistema.',
@@ -162,7 +154,7 @@ export class SignupComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  userAlreadyExistsErrorMessage() {
+  userAlreadyExistsAlert(): void {
     this.alertMessage = {
       title: '',
       message: 'O e-mail já foi cadastrado',
@@ -171,7 +163,7 @@ export class SignupComponent implements OnInit {
     this.alertService.showGenericAlert(this.alertMessage);
   }
 
-  passwordIsNotTheSameErrorMessage() {
+  passwordIsNotTheSameAlert(): void {
     this.alertMessage = {
       title: '',
       message: 'As senhas não correspondem',

@@ -27,8 +27,8 @@ npm start
 ```
 * O projeto irá começar a compilar, deixe o terminal aberto e vá para a seguinte URL: http://localhost:4200
 
-## 📫 Contribuindo para <nome_do_projeto>
-Para contribuir com <nome_do_projeto>, siga estas etapas:
+## 📫 Contribuindo para LAB Clothing Collection
+Para contribuir com LAB Clothing Collection, siga estas etapas:
 
 1. Bifurque este repositório.
 2. Crie um branch: `git checkout -b <nome_branch>`.

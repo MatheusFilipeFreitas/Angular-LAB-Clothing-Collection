@@ -1,6 +1,6 @@
 # LAB Clothing Collection
 
-<img src="exemplo-image.png" alt="exemplo imagem">
+<img src="https://github.com/MatheusFilipeFreitas/LAB-Clothing-Collection/blob/master/src/assets/readme/screenshot.png" alt="exemplo imagem">
 
 > Projeto DEVinHouse Audaces Módulo 1, aplicação em Angular e JSON Server. CRUD básico de Coleções e Modelos.
 

@@ -26,6 +26,12 @@ import { NumberAbbreviationPipe } from './common/pipe/number-abbreviation.pipe';
 import { BuildingComponent } from './pages/building/building.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 
+import { DEFAULT_CURRENCY_CODE, LOCALE_ID } from '@angular/core';
+import ptBr from '@angular/common/locales/pt';
+import { registerLocaleData } from '@angular/common';
+
+registerLocaleData(ptBr);
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +55,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     NotFoundComponent
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, ReactiveFormsModule, FormsModule, NgxSkeletonLoaderModule],
-  providers: [AuthGuard],
+  providers: [AuthGuard, { provide: LOCALE_ID, useValue: 'pt' }, { provide: DEFAULT_CURRENCY_CODE, useValue: 'BRL' }],
   bootstrap: [AppComponent],
 })
 export class AppModule { }
